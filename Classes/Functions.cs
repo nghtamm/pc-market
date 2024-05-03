@@ -2,8 +2,8 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace pc_market.classes {
-    public class functions {
+namespace pc_market.Classes {
+    public class Functions {
         public static SqlConnection conn;
         public static string connString;
 

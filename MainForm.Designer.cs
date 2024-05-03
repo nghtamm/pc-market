@@ -2,7 +2,7 @@
 
 namespace pc_market
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -231,7 +231,7 @@ namespace pc_market
             this.exitMenuItem.Size = new System.Drawing.Size(49, 20);
             this.exitMenuItem.Text = "Thoát";
             // 
-            // mainForm
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -240,7 +240,7 @@ namespace pc_market
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "mainForm";
+            this.Name = "MainForm";
             this.Text = "Cửa hàng máy tính PC Market";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.menuStrip1.ResumeLayout(false);

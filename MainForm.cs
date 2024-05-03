@@ -3,16 +3,16 @@ using System.Windows.Forms;
 
 namespace pc_market
 {
-    public partial class mainForm : Form
+    public partial class MainForm : Form
     {
-        public mainForm()
+        public MainForm()
         {
             InitializeComponent();
         }
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            classes.functions.Connect();
+            Classes.Functions.Connect();
         }
     }
 }
