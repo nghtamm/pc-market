@@ -2,7 +2,7 @@
 
 namespace pc_market
 {
-    partial class MainForm
+    partial class Form_MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -65,7 +65,7 @@ namespace pc_market
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.categoriesMenuItem, this.receiptMenuItem, this.reportMenuItem, this.searchMenuItem, this.aboutUsMenuItem, this.exitMenuItem });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1274, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1360, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -231,18 +231,19 @@ namespace pc_market
             this.exitMenuItem.Size = new System.Drawing.Size(49, 20);
             this.exitMenuItem.Text = "Thoát";
             // 
-            // MainForm
+            // Form_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::pc_market.Properties.Resources.banner;
-            this.ClientSize = new System.Drawing.Size(1274, 631);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(1360, 523);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainForm";
+            this.Name = "Form_MainMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa hàng máy tính PC Market";
-            this.Load += new System.EventHandler(this.mainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
