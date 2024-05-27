@@ -14,5 +14,22 @@ namespace pc_market
         {
             Classes.Functions.Connect();
         }
+
+        private void categoryProvider_Click(object sender, EventArgs e)
+        {
+            Forms.frm_NCC a = new Forms.frm_NCC();
+            a.Show();
+        }
+
+        private void categoryPCParts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PCParts_GPU_Click(object sender, EventArgs e)
+        {
+            Forms.frm_GPU a = new Forms.frm_GPU();
+            a.Show();
+        }
     }
 }

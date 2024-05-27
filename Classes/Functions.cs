@@ -9,7 +9,7 @@ namespace pc_market.Classes {
 
         public static void Connect()
         {
-            connString = "Server=localhost;Database=pc-market;Trusted_Connection=True;";
+            connString = "Data Source=PHUONGG\\PHUONG;Initial Catalog=pc-market;Integrated Security=True";
             // connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
             conn = new SqlConnection(connString);
             try
@@ -33,5 +33,67 @@ namespace pc_market.Classes {
                 conn = null;
             }
         }
+        public static DataTable GetDataToTable(string sql)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Functions.conn);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            return table;
+        }
+        public static string GetFieldValues(string sql)
+        {
+            string ma = "";
+            SqlCommand cmd = new SqlCommand(sql, Functions.conn);
+            SqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ma = reader.GetValue(0).ToString();
+            }
+            reader.Close();
+            return ma;
+        }
+        public static bool CheckKey(string sql)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Functions.conn);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+        public static void RunSql(string sql)
+        {
+            SqlCommand cmd;		               
+            cmd = new SqlCommand();	        
+            cmd.Connection = Functions.conn;	  
+            cmd.CommandText = sql;			  
+            try
+            {
+                cmd.ExecuteNonQuery();		  
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            cmd.Dispose();
+            cmd = null;
+        }
+        public static void FillCombo(string sql, ComboBox cbo, string ma, string ten)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Functions.conn);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            cbo.DataSource = table;
+
+            cbo.ValueMember = ma;    // Truong gia tri
+            cbo.DisplayMember = ten;    // Truong hien thi
+        }
+
+
+
+
+
     }
 }
