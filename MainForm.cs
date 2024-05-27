@@ -31,5 +31,11 @@ namespace pc_market
             Forms.frm_GPU a = new Forms.frm_GPU();
             a.Show();
         }
+
+        private void receiptSell_Click(object sender, EventArgs e)
+        {
+            Forms.frm_Hoadonban a = new Forms.frm_Hoadonban();
+            a.Show();
+        }
     }
 }

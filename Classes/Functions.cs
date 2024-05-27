@@ -90,7 +90,16 @@ namespace pc_market.Classes {
             cbo.ValueMember = ma;    // Truong gia tri
             cbo.DisplayMember = ten;    // Truong hien thi
         }
+        public static void FillCombo1(string sql, ComboBox cbo, string ma)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Functions.conn);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            cbo.DataSource = table;
 
+            cbo.ValueMember = ma;    // Truong gia tri
+        
+        }
 
 
 

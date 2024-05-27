@@ -44,21 +44,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtLoaigpu = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtMota = new System.Windows.Forms.RichTextBox();
+            this.cboMahsx = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.txtDungluong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cboMahsx = new System.Windows.Forms.ComboBox();
-            this.txtMota = new System.Windows.Forms.RichTextBox();
+            this.txtLoaigpu = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgridGPU)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnXuatexcel
             // 
-            this.btnXuatexcel.Location = new System.Drawing.Point(940, 216);
+            this.btnXuatexcel.Location = new System.Drawing.Point(905, 216);
             this.btnXuatexcel.Name = "btnXuatexcel";
             this.btnXuatexcel.Size = new System.Drawing.Size(91, 45);
             this.btnXuatexcel.TabIndex = 40;
@@ -68,7 +68,7 @@
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(778, 217);
+            this.btnDong.Location = new System.Drawing.Point(743, 217);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(91, 45);
             this.btnDong.TabIndex = 38;
@@ -78,7 +78,7 @@
             // 
             // btnHienthids
             // 
-            this.btnHienthids.Location = new System.Drawing.Point(677, 217);
+            this.btnHienthids.Location = new System.Drawing.Point(642, 217);
             this.btnHienthids.Name = "btnHienthids";
             this.btnHienthids.Size = new System.Drawing.Size(100, 45);
             this.btnHienthids.TabIndex = 37;
@@ -88,7 +88,7 @@
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(585, 216);
+            this.btnTimkiem.Location = new System.Drawing.Point(550, 216);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(91, 45);
             this.btnTimkiem.TabIndex = 36;
@@ -98,7 +98,7 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(494, 216);
+            this.btnBoqua.Location = new System.Drawing.Point(459, 216);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(91, 45);
             this.btnBoqua.TabIndex = 35;
@@ -108,7 +108,7 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(404, 216);
+            this.btnLuu.Location = new System.Drawing.Point(369, 216);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 45);
             this.btnLuu.TabIndex = 34;
@@ -118,7 +118,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(314, 216);
+            this.btnSua.Location = new System.Drawing.Point(279, 216);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(91, 45);
             this.btnSua.TabIndex = 33;
@@ -128,7 +128,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(224, 216);
+            this.btnXoa.Location = new System.Drawing.Point(189, 216);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(91, 45);
             this.btnXoa.TabIndex = 32;
@@ -138,7 +138,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(134, 216);
+            this.btnThem.Location = new System.Drawing.Point(99, 216);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(91, 45);
             this.btnThem.TabIndex = 31;
@@ -149,7 +149,7 @@
             // dgridGPU
             // 
             this.dgridGPU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridGPU.Location = new System.Drawing.Point(136, 279);
+            this.dgridGPU.Location = new System.Drawing.Point(101, 279);
             this.dgridGPU.Name = "dgridGPU";
             this.dgridGPU.RowHeadersWidth = 51;
             this.dgridGPU.RowTemplate.Height = 24;
@@ -175,7 +175,7 @@
             // 
             // txtMagpu
             // 
-            this.txtMagpu.Location = new System.Drawing.Point(312, 69);
+            this.txtMagpu.Location = new System.Drawing.Point(277, 69);
             this.txtMagpu.Name = "txtMagpu";
             this.txtMagpu.Size = new System.Drawing.Size(250, 22);
             this.txtMagpu.TabIndex = 24;
@@ -193,7 +193,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(463, 12);
+            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.Location = new System.Drawing.Point(428, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(252, 26);
             this.label1.TabIndex = 22;
@@ -212,28 +213,46 @@
             this.groupBox1.Controls.Add(this.txtTengpu);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(136, 41);
+            this.groupBox1.Location = new System.Drawing.Point(101, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(895, 156);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
             // 
-            // txtLoaigpu
+            // txtMota
             // 
-            this.txtLoaigpu.Location = new System.Drawing.Point(176, 84);
-            this.txtLoaigpu.Name = "txtLoaigpu";
-            this.txtLoaigpu.Size = new System.Drawing.Size(250, 22);
-            this.txtLoaigpu.TabIndex = 29;
+            this.txtMota.Location = new System.Drawing.Point(591, 59);
+            this.txtMota.Name = "txtMota";
+            this.txtMota.Size = new System.Drawing.Size(250, 75);
+            this.txtMota.TabIndex = 49;
+            this.txtMota.Text = "";
             // 
-            // label3
+            // cboMahsx
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
-            this.label3.TabIndex = 28;
-            this.label3.Text = "Loại GPU";
+            this.cboMahsx.FormattingEnabled = true;
+            this.cboMahsx.Location = new System.Drawing.Point(591, 26);
+            this.cboMahsx.Name = "cboMahsx";
+            this.cboMahsx.Size = new System.Drawing.Size(250, 24);
+            this.cboMahsx.TabIndex = 48;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(471, 59);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 16);
+            this.label8.TabIndex = 44;
+            this.label8.Text = "Mô tả";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(471, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 16);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "Hãng sản xuất";
             // 
             // txtDungluong
             // 
@@ -251,45 +270,27 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Dung lượng";
             // 
-            // label6
+            // txtLoaigpu
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(471, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 16);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "Hãng sản xuất";
+            this.txtLoaigpu.Location = new System.Drawing.Point(176, 84);
+            this.txtLoaigpu.Name = "txtLoaigpu";
+            this.txtLoaigpu.Size = new System.Drawing.Size(250, 22);
+            this.txtLoaigpu.TabIndex = 29;
             // 
-            // label8
+            // label3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(471, 59);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 16);
-            this.label8.TabIndex = 44;
-            this.label8.Text = "Mô tả";
-            // 
-            // cboMahsx
-            // 
-            this.cboMahsx.FormattingEnabled = true;
-            this.cboMahsx.Location = new System.Drawing.Point(591, 26);
-            this.cboMahsx.Name = "cboMahsx";
-            this.cboMahsx.Size = new System.Drawing.Size(250, 24);
-            this.cboMahsx.TabIndex = 48;
-            // 
-            // txtMota
-            // 
-            this.txtMota.Location = new System.Drawing.Point(591, 59);
-            this.txtMota.Name = "txtMota";
-            this.txtMota.Size = new System.Drawing.Size(250, 75);
-            this.txtMota.TabIndex = 49;
-            this.txtMota.Text = "";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(56, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Loại GPU";
             // 
             // frm_GPU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 542);
+            this.ClientSize = new System.Drawing.Size(1104, 542);
             this.Controls.Add(this.btnXuatexcel);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnHienthids);

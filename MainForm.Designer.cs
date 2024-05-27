@@ -92,7 +92,7 @@ namespace pc_market
             // categoryPC
             // 
             this.categoryPC.Name = "categoryPC";
-            this.categoryPC.Size = new System.Drawing.Size(224, 26);
+            this.categoryPC.Size = new System.Drawing.Size(211, 26);
             this.categoryPC.Text = "Máy tính";
             // 
             // categoryPCParts
@@ -104,57 +104,57 @@ namespace pc_market
             this.PCParts_GPU,
             this.PCParts_DiskDrive});
             this.categoryPCParts.Name = "categoryPCParts";
-            this.categoryPCParts.Size = new System.Drawing.Size(224, 26);
+            this.categoryPCParts.Size = new System.Drawing.Size(211, 26);
             this.categoryPCParts.Text = "Linh kiện máy tính";
             this.categoryPCParts.Click += new System.EventHandler(this.categoryPCParts_Click);
             // 
             // PCParts_Mainboard
             // 
             this.PCParts_Mainboard.Name = "PCParts_Mainboard";
-            this.PCParts_Mainboard.Size = new System.Drawing.Size(224, 26);
+            this.PCParts_Mainboard.Size = new System.Drawing.Size(216, 26);
             this.PCParts_Mainboard.Text = "Mainboard";
             // 
             // PCParts_CPU
             // 
             this.PCParts_CPU.Name = "PCParts_CPU";
-            this.PCParts_CPU.Size = new System.Drawing.Size(224, 26);
+            this.PCParts_CPU.Size = new System.Drawing.Size(216, 26);
             this.PCParts_CPU.Text = "CPU";
             // 
             // PCParts_RAM
             // 
             this.PCParts_RAM.Name = "PCParts_RAM";
-            this.PCParts_RAM.Size = new System.Drawing.Size(224, 26);
+            this.PCParts_RAM.Size = new System.Drawing.Size(216, 26);
             this.PCParts_RAM.Text = "RAM";
             // 
             // PCParts_GPU
             // 
             this.PCParts_GPU.Name = "PCParts_GPU";
-            this.PCParts_GPU.Size = new System.Drawing.Size(224, 26);
+            this.PCParts_GPU.Size = new System.Drawing.Size(216, 26);
             this.PCParts_GPU.Text = "Card đồ họa (GPU)";
             this.PCParts_GPU.Click += new System.EventHandler(this.PCParts_GPU_Click);
             // 
             // PCParts_DiskDrive
             // 
             this.PCParts_DiskDrive.Name = "PCParts_DiskDrive";
-            this.PCParts_DiskDrive.Size = new System.Drawing.Size(224, 26);
+            this.PCParts_DiskDrive.Size = new System.Drawing.Size(216, 26);
             this.PCParts_DiskDrive.Text = "Ổ cứng";
             // 
             // categoryEmployee
             // 
             this.categoryEmployee.Name = "categoryEmployee";
-            this.categoryEmployee.Size = new System.Drawing.Size(224, 26);
+            this.categoryEmployee.Size = new System.Drawing.Size(211, 26);
             this.categoryEmployee.Text = "Nhân viên";
             // 
             // categoryCustomer
             // 
             this.categoryCustomer.Name = "categoryCustomer";
-            this.categoryCustomer.Size = new System.Drawing.Size(224, 26);
+            this.categoryCustomer.Size = new System.Drawing.Size(211, 26);
             this.categoryCustomer.Text = "Khách hàng";
             // 
             // categoryProvider
             // 
             this.categoryProvider.Name = "categoryProvider";
-            this.categoryProvider.Size = new System.Drawing.Size(224, 26);
+            this.categoryProvider.Size = new System.Drawing.Size(211, 26);
             this.categoryProvider.Text = "Nhà cung cấp";
             this.categoryProvider.Click += new System.EventHandler(this.categoryProvider_Click);
             // 
@@ -164,7 +164,7 @@ namespace pc_market
             this.Others_MonitorDetails,
             this.Others_Manufacturers});
             this.categoryOthers.Name = "categoryOthers";
-            this.categoryOthers.Size = new System.Drawing.Size(224, 26);
+            this.categoryOthers.Size = new System.Drawing.Size(211, 26);
             this.categoryOthers.Text = "Khác";
             // 
             // Others_MonitorDetails
@@ -191,14 +191,15 @@ namespace pc_market
             // receiptBuy
             // 
             this.receiptBuy.Name = "receiptBuy";
-            this.receiptBuy.Size = new System.Drawing.Size(187, 26);
+            this.receiptBuy.Size = new System.Drawing.Size(224, 26);
             this.receiptBuy.Text = "Hóa đơn nhập";
             // 
             // receiptSell
             // 
             this.receiptSell.Name = "receiptSell";
-            this.receiptSell.Size = new System.Drawing.Size(187, 26);
+            this.receiptSell.Size = new System.Drawing.Size(224, 26);
             this.receiptSell.Text = "Hóa đơn bán";
+            this.receiptSell.Click += new System.EventHandler(this.receiptSell_Click);
             // 
             // reportMenuItem
             // 
@@ -213,19 +214,19 @@ namespace pc_market
             // reportBuy
             // 
             this.reportBuy.Name = "reportBuy";
-            this.reportBuy.Size = new System.Drawing.Size(220, 26);
+            this.reportBuy.Size = new System.Drawing.Size(224, 26);
             this.reportBuy.Text = "Báo cáo nhập hàng";
             // 
             // reportSell
             // 
             this.reportSell.Name = "reportSell";
-            this.reportSell.Size = new System.Drawing.Size(220, 26);
+            this.reportSell.Size = new System.Drawing.Size(224, 26);
             this.reportSell.Text = "Báo cáo bán hàng";
             // 
             // reportIncome
             // 
             this.reportIncome.Name = "reportIncome";
-            this.reportIncome.Size = new System.Drawing.Size(220, 26);
+            this.reportIncome.Size = new System.Drawing.Size(224, 26);
             this.reportIncome.Text = "Báo cáo doanh thu";
             // 
             // searchMenuItem
