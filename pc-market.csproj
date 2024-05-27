@@ -47,11 +47,11 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Classes\Functions.cs" />
-        <Compile Include="Forms\Form_CategoryPC.cs">
+        <Compile Include="Forms\Form_Mainboard.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Forms\Form_CategoryPC.Designer.cs">
-          <DependentUpon>Form_CategoryPC.cs</DependentUpon>
+        <Compile Include="Forms\Form_Mainboard.Designer.cs">
+          <DependentUpon>Form_Mainboard.cs</DependentUpon>
         </Compile>
         <Compile Include="Forms\Form_Login.cs">
           <SubType>Form</SubType>
@@ -72,6 +72,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Forms\Form_MainMenu.resx">
           <DependentUpon>Form_MainMenu.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_Mainboard.resx">
+          <DependentUpon>Form_Mainboard.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

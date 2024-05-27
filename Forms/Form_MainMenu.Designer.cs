@@ -94,6 +94,7 @@ namespace pc_market
             this.PCParts_Mainboard.Name = "PCParts_Mainboard";
             this.PCParts_Mainboard.Size = new System.Drawing.Size(173, 22);
             this.PCParts_Mainboard.Text = "Mainboard";
+            this.PCParts_Mainboard.Click += new System.EventHandler(this.Category_Mainboard_Click);
             // 
             // PCParts_CPU
             // 
@@ -224,12 +225,14 @@ namespace pc_market
             this.aboutUsMenuItem.Name = "aboutUsMenuItem";
             this.aboutUsMenuItem.Size = new System.Drawing.Size(86, 20);
             this.aboutUsMenuItem.Text = "Về chúng tôi";
+            this.aboutUsMenuItem.Click += new System.EventHandler(this.AboutUs_Click);
             // 
             // exitMenuItem
             // 
             this.exitMenuItem.Name = "exitMenuItem";
             this.exitMenuItem.Size = new System.Drawing.Size(49, 20);
             this.exitMenuItem.Text = "Thoát";
+            this.exitMenuItem.Click += new System.EventHandler(this.Exit_Click);
             // 
             // Form_MainMenu
             // 
@@ -241,6 +244,8 @@ namespace pc_market
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form_MainMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cửa hàng máy tính PC Market";
