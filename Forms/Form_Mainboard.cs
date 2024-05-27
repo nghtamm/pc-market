@@ -11,7 +11,7 @@ namespace pc_market.Forms {
         }
 
         private void FormMainboard_Load(object sender, EventArgs e) {
-            // Classes.Functions.Connect();
+            Classes.Functions.Connect();
             textBox1.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
@@ -41,6 +41,8 @@ namespace pc_market.Forms {
             comboBox1.DataSource = manufacturerTable;
             comboBox1.DisplayMember = "tenHSX";
             comboBox1.ValueMember = "maHSX";
+
+            ResetValues();
         }
 
         private void DataGridView_Click(object sender, EventArgs e) {
