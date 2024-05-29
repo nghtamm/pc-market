@@ -369,6 +369,7 @@ namespace pc_market.Forms {
             button4.Enabled = false;
             button5.Enabled = false;
             button6.Enabled = false;
+            button7.Enabled = true;
             textBox1.Enabled = false;
         }
 
@@ -389,8 +390,13 @@ namespace pc_market.Forms {
                 DataGridView_Load();
                 ResetValues();
 
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = false;
                 button5.Enabled = false;
                 button6.Enabled = false;
+                button7.Enabled = true;
             }
         }
 
@@ -522,8 +528,13 @@ namespace pc_market.Forms {
                 DataGridView_Load();
                 ResetValues();
 
+                button1.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = false;
                 button5.Enabled = false;
                 button6.Enabled = false;
+                button7.Enabled = true;
             }
         }
 
