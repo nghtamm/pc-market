@@ -114,6 +114,7 @@ namespace pc_market
             this.PCParts_GPU.Name = "PCParts_GPU";
             this.PCParts_GPU.Size = new System.Drawing.Size(173, 22);
             this.PCParts_GPU.Text = "Card đồ họa (GPU)";
+            this.PCParts_GPU.Click += new System.EventHandler(this.Category_GPU_Click);
             // 
             // PCParts_DiskDrive
             // 
@@ -138,6 +139,7 @@ namespace pc_market
             this.categoryProvider.Name = "categoryProvider";
             this.categoryProvider.Size = new System.Drawing.Size(172, 22);
             this.categoryProvider.Text = "Nhà cung cấp";
+            this.categoryProvider.Click += new System.EventHandler(this.Category_NCC_Click);
             // 
             // categoryOthers
             // 
@@ -176,6 +178,7 @@ namespace pc_market
             this.receiptSell.Name = "receiptSell";
             this.receiptSell.Size = new System.Drawing.Size(152, 22);
             this.receiptSell.Text = "Hóa đơn bán";
+            this.receiptSell.Click += new System.EventHandler(this.Receipt_HDB_Click);
             // 
             // reportMenuItem
             // 

@@ -12,7 +12,9 @@ namespace pc_market.Classes {
             // connString for Windows Authentication (using Local SQL Server & SQL Server Management Studio)
             // connString = "Server=localhost;Database=pc-market;Trusted_Connection=True;";
 
-            connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
+            connString = "Data Source=PHUONGG\\PHUONG;Initial Catalog=pc-market;Integrated Security=True";
+
+            // connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
             conn = new SqlConnection(connString);
             try {
                 conn.Open();
@@ -95,6 +97,26 @@ namespace pc_market.Classes {
 
             reader.Close();
             return key;
+        }
+
+        // Đổ dữ liệu vào ComboBox
+        public static void FillCombo(string query, ComboBox comboBox, string value, string name) {
+            SqlDataAdapter data = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            data.Fill(table);
+
+            comboBox.DataSource = table;
+            comboBox.ValueMember = value; // Trường giá trị
+            comboBox.DisplayMember = name; // Trường hiển thị
+        }
+
+        // Đổ dữ liệu vào ComboBox (không sử dụng tên trường hiển thị)
+        public static void FillCombo1(string query, ComboBox comboBox, string value) {
+            SqlDataAdapter data = new SqlDataAdapter(query, conn);
+            DataTable table = new DataTable();
+            data.Fill(table);
+            comboBox.DataSource = table;
+            comboBox.ValueMember = value; // Trường giá trị
         }
     }
 }

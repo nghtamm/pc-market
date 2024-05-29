@@ -38,5 +38,20 @@ namespace pc_market {
             Forms.Form_PC formPC = new Forms.Form_PC();
             formPC.Show();
         }
+
+        public void Category_GPU_Click(object sender, EventArgs e) {
+            Forms.Form_GPU formGPU = new Forms.Form_GPU();
+            formGPU.Show();
+        }
+
+        public void Category_NCC_Click(object sender, EventArgs e) {
+            Forms.Form_NCC formNCC = new Forms.Form_NCC();
+            formNCC.Show();
+        }
+
+        public void Receipt_HDB_Click(object sender, EventArgs e) {
+            Forms.Form_HoaDonBan formHoaDonBan = new Forms.Form_HoaDonBan();
+            formHoaDonBan.Show();
+        }
     }
 }
