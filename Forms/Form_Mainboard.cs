@@ -11,7 +11,7 @@ namespace pc_market.Forms {
         }
 
         private void FormMainboard_Load(object sender, EventArgs e) {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             textBox1.Enabled = false;
             button4.Enabled = false;
             button5.Enabled = false;
@@ -200,6 +200,7 @@ namespace pc_market.Forms {
 
         private void ButtonReset_Click(object sender, EventArgs e) {
             ResetValues();
+            DataGridView_Load();
 
             button1.Enabled = true;
             button2.Enabled = true;

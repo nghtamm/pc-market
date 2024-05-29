@@ -81,6 +81,7 @@ namespace pc_market
             this.categoryPC.Name = "categoryPC";
             this.categoryPC.Size = new System.Drawing.Size(172, 22);
             this.categoryPC.Text = "Máy tính";
+            this.categoryPC.Click += new System.EventHandler(this.Category_PC_Click);
             // 
             // categoryPCParts
             // 
@@ -167,13 +168,13 @@ namespace pc_market
             // receiptBuy
             // 
             this.receiptBuy.Name = "receiptBuy";
-            this.receiptBuy.Size = new System.Drawing.Size(150, 22);
+            this.receiptBuy.Size = new System.Drawing.Size(152, 22);
             this.receiptBuy.Text = "Hóa đơn nhập";
             // 
             // receiptSell
             // 
             this.receiptSell.Name = "receiptSell";
-            this.receiptSell.Size = new System.Drawing.Size(150, 22);
+            this.receiptSell.Size = new System.Drawing.Size(152, 22);
             this.receiptSell.Text = "Hóa đơn bán";
             // 
             // reportMenuItem

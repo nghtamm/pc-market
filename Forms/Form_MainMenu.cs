@@ -33,5 +33,10 @@ namespace pc_market {
             Forms.Form_Mainboard formMainboard = new Forms.Form_Mainboard();
             formMainboard.Show();
         }
+
+        public void Category_PC_Click(object sender, EventArgs e) {
+            Forms.Form_PC formPC = new Forms.Form_PC();
+            formPC.Show();
+        }
     }
 }

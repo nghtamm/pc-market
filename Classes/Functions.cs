@@ -83,5 +83,18 @@ namespace pc_market.Classes {
 
             command.Dispose();
         }
+
+        // Lấy dữ liệu từ một query SQL
+        public static string GetFieldValues(string query) {
+            string key = "";
+            SqlCommand command = new SqlCommand(query, conn);
+            SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read()) {
+                key = reader.GetValue(0).ToString();
+            }
+
+            reader.Close();
+            return key;
+        }
     }
 }
