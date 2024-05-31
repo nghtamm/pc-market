@@ -162,12 +162,24 @@
         <Compile Include="Forms\Form_PC.Designer.cs">
           <DependentUpon>Form_PC.cs</DependentUpon>
         </Compile>
-        <Compile Include="Forms\Form_GPU.cs" />
-        <Compile Include="Forms\Form_GPU.Designer.cs" />
-        <Compile Include="Forms\Form_NCC.cs" />
-        <Compile Include="Forms\Form_NCC.Designer.cs" />
-        <Compile Include="Forms\Form_HoaDonBan.cs" />
-        <Compile Include="Forms\Form_HoaDonBan.Designer.cs" />
+        <Compile Include="Forms\Form_GPU.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_GPU.Designer.cs">
+          <DependentUpon>Form_GPU.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Form_NCC.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_NCC.Designer.cs">
+          <DependentUpon>Form_NCC.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Form_HoaDonBan.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_HoaDonBan.Designer.cs">
+          <DependentUpon>Form_HoaDonBan.cs</DependentUpon>
+        </Compile>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <EmbeddedResource Include="Forms\Form_Login.resx">
@@ -182,9 +194,15 @@
         <EmbeddedResource Include="Forms\Form_PC.resx">
           <DependentUpon>Form_PC.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Forms\Form_GPU.resx" />
-        <EmbeddedResource Include="Forms\Form_NCC.resx" />
-        <EmbeddedResource Include="Forms\Form_HoaDonBan.resx" />
+        <EmbeddedResource Include="Forms\Form_GPU.resx">
+          <DependentUpon>Form_GPU.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_NCC.resx">
+          <DependentUpon>Form_NCC.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_HoaDonBan.resx">
+          <DependentUpon>Form_HoaDonBan.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
             <LastGenOutput>Resources.Designer.cs</LastGenOutput>
