@@ -138,6 +138,18 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Classes\Functions.cs" />
+        <Compile Include="Forms\Form_KhachHang.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_KhachHang.Designer.cs">
+          <DependentUpon>Form_KhachHang.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Form_RAM.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_RAM.Designer.cs">
+          <DependentUpon>Form_RAM.cs</DependentUpon>
+        </Compile>
         <Compile Include="Forms\Form_Mainboard.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -182,6 +194,12 @@
         </Compile>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <EmbeddedResource Include="Forms\Form_KhachHang.resx">
+          <DependentUpon>Form_KhachHang.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_RAM.resx">
+          <DependentUpon>Form_RAM.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Forms\Form_Login.resx">
           <DependentUpon>Form_Login.cs</DependentUpon>
         </EmbeddedResource>
@@ -228,8 +246,16 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="Database\pc-market-script.sql" />
+      <Content Include="Resources\add.png" />
       <Content Include="Resources\banner.jpg" />
+      <Content Include="Resources\close.png" />
+      <Content Include="Resources\delete.png" />
+      <Content Include="Resources\display.png" />
+      <Content Include="Resources\edit.png" />
       <Content Include="Resources\logo.jpg" />
+      <Content Include="Resources\save.png" />
+      <Content Include="Resources\search.png" />
+      <Content Include="Resources\skip.png" />
     </ItemGroup>
     <ItemGroup>
       <Analyzer Include="packages\Microsoft.CodeAnalysis.Analyzers.3.3.4\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
