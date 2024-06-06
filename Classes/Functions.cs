@@ -15,7 +15,8 @@ namespace pc_market.Classes {
             // connString for Windows Authentication (using Local SQL Server & SQL Server Management Studio)
             // connString = "Server=localhost;Database=pc-market;Trusted_Connection=True;";
 
-            connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
+            // connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
+            connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=Phuocpro1!;";
             conn = new SqlConnection(connString);
             try {
                 conn.Open();

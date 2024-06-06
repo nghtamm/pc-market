@@ -77,7 +77,6 @@ namespace pc_market.Forms
 
         private void dgridMH_Click(object sender, EventArgs e)
         {
-            string ma;
             if (btnThem.Enabled == false)
             {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK,
