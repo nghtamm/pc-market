@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -12,9 +13,7 @@ namespace pc_market.Classes {
             // connString for Windows Authentication (using Local SQL Server & SQL Server Management Studio)
             // connString = "Server=localhost;Database=pc-market;Trusted_Connection=True;";
 
-            connString = "Data Source=PHUONGG\\PHUONG;Initial Catalog=pc-market;Integrated Security=True";
-
-            // connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
+            connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
             conn = new SqlConnection(connString);
             try {
                 conn.Open();
@@ -117,6 +116,172 @@ namespace pc_market.Classes {
             data.Fill(table);
             comboBox.DataSource = table;
             comboBox.ValueMember = value; // Trường giá trị
+        }
+
+        // Chuyển đổi định dạng ngày tháng năm từ dd/MM/yyyy thành MM/dd/yyyy
+        public static string ConvertDateTime(string date) {
+            string[] parts = date.Split('/');
+            string dateTime = String.Format("{0}/{1}/{2}", parts[1], parts[0], parts[2]);
+            return dateTime;
+        }
+
+        // Chuyển đổi giá tiền từ định dạng số sang định dạng chữ
+        public static string ConvertNumericToText(string number) {
+            int length, digit;
+            string result = "";
+            string[] numText;
+
+            // Xóa các dấu "," nếu có
+            number = number.Replace(",", "");
+            numText = "không;một;hai;ba;bốn;năm;sáu;bảy;tám;chín".Split(';');
+            length = number.Length - 1; // Trừ 1 vì thứ tự đi từ 0
+
+            for (int i = 0; i <= length; i++) {
+                digit = Convert.ToInt32(number.Substring(i, 1));
+                result = result + " " + numText[digit];
+
+                if (length == i) // Chữ số cuối cùng không cần xét tiếp
+                    break;
+
+                switch ((length - i) % 9) {
+                    case 0:
+                        result = result + " tỷ";
+                        if (number.Substring(i + 1, 3) == "000")
+                            i += 3;
+                        if (number.Substring(i + 1, 3) == "000")
+                            i += 3;
+                        if (number.Substring(i + 1, 3) == "000")
+                            i += 3;
+                        break;
+                    case 6:
+                        result = result + " triệu";
+                        if (number.Substring(i + 1, 3) == "000")
+                            i += 3;
+                        if (number.Substring(i + 1, 3) == "000")
+                            i += 3;
+                        break;
+                    case 3:
+                        result = result + " nghìn";
+                        if (number.Substring(i + 1, 3) == "000")
+                            i += 3;
+                        break;
+                    default:
+                        switch ((length - i) % 3) {
+                            case 2:
+                                result = result + " trăm";
+                                break;
+                            case 1:
+                                result = result + " mươi";
+                                break;
+                        }
+
+                        break;
+                }
+            }
+
+            // Loại bỏ trường hợp x00
+            result = result.Replace("không mươi không ", "");
+            result = result.Replace("không mươi không", "");
+
+            // Loại bỏ trường hợp 00x
+            result = result.Replace("không mươi ", "linh ");
+
+            // Loại bỏ trường hợp x0, x>=2
+            result = result.Replace("mươi không", "mươi");
+
+            // Fix trường hợp 10
+            result = result.Replace("một mươi", "mười");
+
+            // Fix trường hợp x4, x>=2
+            result = result.Replace("mươi bốn", "mươi tư");
+
+            // Fix trường hợp x04
+            result = result.Replace("linh bốn", "linh tư");
+
+            // Fix trường hợp x5, x>=2
+            result = result.Replace("mươi năm", "mươi lăm");
+
+            // Fix trường hợp x1, x>=2
+            result = result.Replace("mươi một", "mươi mốt");
+
+            // Fix trường hợp x15
+            result = result.Replace("mười năm", "mười lăm");
+
+            // Bỏ ký tự space
+            result = result.Trim();
+
+            // Viết hoa ký tự đầu tiên
+            result = char.ToUpper(result[0]) + result.Substring(1) + " đồng";
+
+            return result;
+        }
+
+        public static string CreateKey(string param) {
+            string key = param;
+
+            string[] dateParts;
+            dateParts = DateTime.Now.ToShortDateString().Split('/');
+            string date = String.Format("{0}{1}{2}", dateParts[0], dateParts[1], dateParts[2]);
+            key = key + date;
+
+            string[] timeParts;
+            timeParts = DateTime.Now.ToLongTimeString().Split(':');
+            if (timeParts[2].Substring(3, 2) == "PM")
+                timeParts[0] = ConvertTimeTo24(timeParts[0]);
+            if (timeParts[2].Substring(3, 2) == "AM")
+                if (timeParts[0].Length == 1)
+                    timeParts[0] = "0" + timeParts[0];
+            // Xóa ký tự trắng và PM hoặc AM
+            timeParts[2] = timeParts[2].Remove(2, 3);
+            string time;
+            time = String.Format("{0}{1}{2}", timeParts[0], timeParts[1], timeParts[2]);
+            key = key + "_" + time;
+
+            return key;
+        }
+
+        public static string ConvertTimeTo24(string hour) {
+            string hour24 = "";
+            switch (hour) {
+                case "1":
+                    hour24 = "13";
+                    break;
+                case "2":
+                    hour24 = "14";
+                    break;
+                case "3":
+                    hour24 = "15";
+                    break;
+                case "4":
+                    hour24 = "16";
+                    break;
+                case "5":
+                    hour24 = "17";
+                    break;
+                case "6":
+                    hour24 = "18";
+                    break;
+                case "7":
+                    hour24 = "19";
+                    break;
+                case "8":
+                    hour24 = "20";
+                    break;
+                case "9":
+                    hour24 = "21";
+                    break;
+                case "10":
+                    hour24 = "22";
+                    break;
+                case "11":
+                    hour24 = "23";
+                    break;
+                case "12":
+                    hour24 = "0";
+                    break;
+            }
+
+            return hour24;
         }
     }
 }
