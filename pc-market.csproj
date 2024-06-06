@@ -138,6 +138,18 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Classes\Functions.cs" />
+        <Compile Include="Forms\Form_BaoCaoBan.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_BaoCaoBan.Designer.cs">
+          <DependentUpon>Form_BaoCaoBan.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Form_CPU.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_CPU.Designer.cs">
+          <DependentUpon>Form_CPU.cs</DependentUpon>
+        </Compile>
         <Compile Include="Forms\Form_DataStorage.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -155,6 +167,18 @@
         </Compile>
         <Compile Include="Forms\Form_KhachHang.Designer.cs">
           <DependentUpon>Form_KhachHang.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Form_Monitor.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_Monitor.Designer.cs">
+          <DependentUpon>Form_Monitor.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Form_NhanVien.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_NhanVien.Designer.cs">
+          <DependentUpon>Form_NhanVien.cs</DependentUpon>
         </Compile>
         <Compile Include="Forms\Form_RAM.cs">
           <SubType>Form</SubType>
@@ -218,6 +242,12 @@
         </Compile>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <EmbeddedResource Include="Forms\Form_BaoCaoBan.resx">
+          <DependentUpon>Form_BaoCaoBan.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_CPU.resx">
+          <DependentUpon>Form_CPU.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Forms\Form_DataStorage.resx">
           <DependentUpon>Form_DataStorage.cs</DependentUpon>
         </EmbeddedResource>
@@ -226,6 +256,12 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Forms\Form_KhachHang.resx">
           <DependentUpon>Form_KhachHang.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_Monitor.resx">
+          <DependentUpon>Form_Monitor.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_NhanVien.resx">
+          <DependentUpon>Form_NhanVien.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Forms\Form_RAM.resx">
           <DependentUpon>Form_RAM.cs</DependentUpon>
