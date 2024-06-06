@@ -14,7 +14,7 @@ namespace pc_market.Forms {
         }
 
         private void frm_NCC_Load(object sender, EventArgs e) {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             txtMancc.Enabled = false;
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;

@@ -20,7 +20,7 @@ namespace pc_market.Forms {
         DataTable tblGPU;
 
         private void frm_GPU_Load(object sender, EventArgs e) {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             txtMagpu.Enabled = false;
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;

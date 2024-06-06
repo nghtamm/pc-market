@@ -44,9 +44,24 @@ namespace pc_market {
             formGPU.Show();
         }
 
-        public void Category_NCC_Click(object sender, EventArgs e) {
+        public void Category_Provider_Click(object sender, EventArgs e) {
             Forms.Form_NCC formNCC = new Forms.Form_NCC();
             formNCC.Show();
+        }
+
+        public void Category_Customer_Click(object sender, EventArgs e) {
+            Forms.Form_KhachHang formKhachHang = new Forms.Form_KhachHang();
+            formKhachHang.Show();
+        }
+
+        public void Category_RAM_Click(object sender, EventArgs e) {
+            Forms.Form_RAM formRAM = new Forms.Form_RAM();
+            formRAM.Show();
+        }
+
+        public void Category_DataStorage_Click(object sender, EventArgs e) {
+            Forms.Form_DataStorage formDataStorage = new Forms.Form_DataStorage();
+            formDataStorage.Show();
         }
 
         public void Receipt_HDB_Click(object sender, EventArgs e) {
@@ -58,6 +73,15 @@ namespace pc_market {
         {
             Forms.Form_TimHDB formTimHDB = new Forms.Form_TimHDB();
             formTimHDB.Show();
+          
+        public void Receipt_HDN_Click(object sender, EventArgs e) {
+            Forms.Form_HoaDonNhap formHoaDonNhap = new Forms.Form_HoaDonNhap();
+            formHoaDonNhap.Show();
+        }
+
+        public void Search_HDN_Click(object sender, EventArgs e) {
+            Forms.Form_SearchHDN formSearchHDN = new Forms.Form_SearchHDN();
+            formSearchHDN.Show();
         }
     }
 }
