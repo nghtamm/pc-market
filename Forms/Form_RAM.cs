@@ -17,8 +17,8 @@ namespace pc_market.Forms {
             InitializeComponent();
         }
 
-
         private void FormRAM_Load(object sender, EventArgs e) {
+            // Classes.Functions.Connect();
             txtMaRam.Enabled = false;
             btnluu.Enabled = false;
             btnboqua.Enabled = false;
@@ -33,10 +33,8 @@ namespace pc_market.Forms {
             txtTenRam.Text = "";
             txtloaiRam.Text = "";
 
-            txtDungluong.Text = "0";
-            txtbus.Text = "0";
-            txtDungluong.Enabled = false;
-            txtbus.Enabled = false;
+            txtDungluong.Text = "";
+            txtbus.Text = "";
 
             cboMaHsx.Text = "";
             txtMota.Text = "";
@@ -46,24 +44,24 @@ namespace pc_market.Forms {
 
         private void Load_dataGridView() {
             string sql;
-            sql = "SELECT maRam, tenRam, loaiRam, bus, dungLuong, maHSX, moTa  FROM ram";
+            sql = "SELECT ram.maRam, ram.tenRam, ram.loaiRam, ram.bus, ram.dungLuong, hangSanXuat.tenHSX, ram.moTa FROM ram JOIN dbo.hangSanXuat ON ram.maHSX = hangSanXuat.maHSX";
             tblram = Functions.GetDataToTable(sql);
             dataGridView.DataSource = tblram;
             dataGridView.Columns[0].HeaderText = "Mã RAM";
             dataGridView.Columns[1].HeaderText = "Tên RAM";
             dataGridView.Columns[2].HeaderText = "Loại RAM";
-            dataGridView.Columns[3].HeaderText = "bus";
+            dataGridView.Columns[3].HeaderText = "Bus";
             dataGridView.Columns[4].HeaderText = "Dung lượng";
-            dataGridView.Columns[5].HeaderText = "HSX";
+            dataGridView.Columns[5].HeaderText = "Hãng sản xuất";
             dataGridView.Columns[6].HeaderText = "Mô tả";
 
             dataGridView.Columns[0].Width = 80;
-            dataGridView.Columns[1].Width = 170;
+            dataGridView.Columns[1].Width = 200;
             dataGridView.Columns[2].Width = 80;
-            dataGridView.Columns[3].Width = 80;
+            dataGridView.Columns[3].Width = 40;
             dataGridView.Columns[4].Width = 100;
             dataGridView.Columns[5].Width = 100;
-            dataGridView.Columns[6].Width = 100;
+            dataGridView.Columns[6].Width = 280;
 
             dataGridView.AllowUserToAddRows = false;
             dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -78,7 +76,6 @@ namespace pc_market.Forms {
                 return;
             }
 
-
             if (tblram.Rows.Count == 0) {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -86,10 +83,7 @@ namespace pc_market.Forms {
 
             txtMaRam.Text = dataGridView.CurrentRow.Cells["maRam"].Value.ToString();
             txtTenRam.Text = dataGridView.CurrentRow.Cells["tenRam"].Value.ToString();
-
-            ma = dataGridView.CurrentRow.Cells["maHSX"].Value.ToString();
-            cboMaHsx.Text = Functions.GetFieldValues("SELECT tenHSX FROM hangSanXuat WHERE maHSX = N'" + ma + "'");
-
+            cboMaHsx.Text = dataGridView.CurrentRow.Cells["tenHSX"].Value.ToString();
             txtloaiRam.Text = dataGridView.CurrentRow.Cells["loaiRam"].Value.ToString();
             txtDungluong.Text = dataGridView.CurrentRow.Cells["dungLuong"].Value.ToString();
             txtbus.Text = dataGridView.CurrentRow.Cells["bus"].Value.ToString();
@@ -114,40 +108,39 @@ namespace pc_market.Forms {
         private void btnluu_Click(object sender, EventArgs e) {
             string sql;
             if (txtMaRam.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập mã Ram", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn phải nhập mã RAM", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaRam.Focus();
                 return;
             }
 
             if (txtTenRam.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập tên Ram", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn phải nhập tên RAM", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenRam.Focus();
                 return;
             }
 
-            if (txtloaiRam.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập loại Ram", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtloaiRam.Focus();
+            if (cboMaHsx.SelectedValue == null) {
+                MessageBox.Show("Bạn phải chọn hãng sản xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cboMaHsx.Focus();
                 return;
             }
 
-
-            if (cboMaHsx.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải chọn hãng sản xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboMaHsx.Focus();
+            if (txtDungluong.Text.Trim().Length == 0) {
+                MessageBox.Show("Bạn phải nhập dung lượng RAM", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDungluong.Focus();
                 return;
             }
 
             sql = "select maRam from ram where maRam=N'" + txtMaRam.Text.Trim() + "'";
 
             if (Functions.CheckID(sql)) {
-                MessageBox.Show("Mã Ram này đã có, bạn vui lòng nhập mã khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mã RAM này đã có, bạn vui lòng nhập mã khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtMaRam.Focus();
                 txtMaRam.Text = "";
                 return;
             }
 
-            sql = "INSERT INTO ram(maRam,tenRam,loaiRam,bus,dungLuong,maHSX,moTa) VALUES(N'" + txtMaRam.Text.Trim() + "',N'" + txtTenRam.Text.Trim() + "',N'" + txtloaiRam.Text.Trim() + "'," + txtbus.Text.Trim() + "," + txtDungluong.Text.Trim() + ",N'" + cboMaHsx.SelectedValue.ToString() + "',N'" + txtMota.Text.Trim() + "')";
+            sql = "INSERT INTO ram(maRam,tenRam,loaiRam,bus,dungLuong,maHSX,moTa) VALUES(N'" + txtMaRam.Text.Trim() + "',N'" + txtTenRam.Text.Trim() + "',N'" + txtloaiRam.Text.Trim() + "',N'" + txtbus.Text.Trim() + "',N'" + txtDungluong.Text.Trim() + "',N'" + cboMaHsx.SelectedValue.ToString() + "',N'" + txtMota.Text.Trim() + "')";
 
             Classes.Functions.RunSQL(sql);
             Load_dataGridView();
@@ -173,23 +166,22 @@ namespace pc_market.Forms {
             }
 
             if (txtTenRam.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập tên Ram", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn phải nhập tên RAM", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtTenRam.Focus();
                 return;
             }
 
-            if (txtloaiRam.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập loại Ram", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtloaiRam.Focus();
-                return;
-            }
-
-            if (cboMaHsx.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập mã HSX", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (cboMaHsx.SelectedValue == null) {
+                MessageBox.Show("Bạn phải chọn hãng sản xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cboMaHsx.Focus();
                 return;
             }
 
+            if (txtDungluong.Text.Trim().Length == 0) {
+                MessageBox.Show("Bạn phải nhập dung lượng RAM", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtDungluong.Focus();
+                return;
+            }
 
             sql = "UPDATE ram SET tenRam=N'" +
                   txtTenRam.Text.Trim().ToString() + "',loaiRam=N'" + txtloaiRam.Text.Trim().ToString() + "',maHSX=N'" +
@@ -239,12 +231,11 @@ namespace pc_market.Forms {
                 return;
             }
 
-            sql = "SELECT * FROM ram WHERE 1=1";
-            ;
+            sql = "SELECT ram.maRam, ram.tenRam, ram.loaiRam, ram.bus, ram.dungLuong, hangSanXuat.tenHSX, ram.moTa FROM ram JOIN dbo.hangSanXuat ON ram.maHSX = hangSanXuat.maHSX WHERE 1=1";
             if (txtTenRam.Text != "")
-                sql = sql + " AND tenRam Like N'%" + txtTenRam.Text + "%'";
+                sql = sql + " AND ram.tenRam Like N'%" + txtTenRam.Text + "%'";
             if (cboMaHsx.Text != "")
-                sql = sql + " AND maHSX Like N'%" + cboMaHsx.SelectedValue + "%'";
+                sql = sql + " AND hangSanXuat.maHSX Like N'%" + cboMaHsx.SelectedValue + "%'";
 
             tblram = Classes.Functions.GetDataToTable(sql);
             if (tblram.Rows.Count == 0)
@@ -258,7 +249,7 @@ namespace pc_market.Forms {
 
         private void btnhienthids_Click(object sender, EventArgs e) {
             string sql;
-            sql = "SELECT maRam, tenRam, Mahsx, bus, dungLuong, moTa from ram";
+            sql = "SELECT ram.maRam, ram.tenRam, ram.loaiRam, ram.bus, ram.dungLuong, hangSanXuat.tenHSX, ram.moTa FROM ram JOIN dbo.hangSanXuat ON ram.maHSX = hangSanXuat.maHSX";
             tblram = Functions.GetDataToTable(sql);
             dataGridView.DataSource = tblram;
         }

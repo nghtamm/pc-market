@@ -18,6 +18,7 @@ namespace pc_market.Forms {
         }
 
         private void FormKhachhang_Load(object sender, EventArgs e) {
+            // Classes.Functions.Connect();
             txtMakhach.Enabled = false;
             btnluu.Enabled = false;
             btnboqua.Enabled = false;
@@ -36,9 +37,9 @@ namespace pc_market.Forms {
             DataGridView.Columns[2].HeaderText = "Địa chỉ";
             DataGridView.Columns[3].HeaderText = "Điện thoại";
 
-            DataGridView.Columns[0].Width = 100;
-            DataGridView.Columns[1].Width = 150;
-            DataGridView.Columns[2].Width = 150;
+            DataGridView.Columns[0].Width = 110;
+            DataGridView.Columns[1].Width = 200;
+            DataGridView.Columns[2].Width = 400;
             DataGridView.Columns[3].Width = 150;
             DataGridView.AllowUserToAddRows = false;
             DataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -51,7 +52,7 @@ namespace pc_market.Forms {
             mskDienthoai.Text = "";
         }
 
-        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+        private void DataGridView_CellContentClick(object sender, EventArgs e) {
             if (btnthem.Enabled == false) {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMakhach.Focus();
@@ -95,12 +96,6 @@ namespace pc_market.Forms {
             if (txtTenkhach.Text.Trim().Length == 0) {
                 MessageBox.Show("Bạn phải nhập tên khách", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTenkhach.Focus();
-                return;
-            }
-
-            if (txtDiachi.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDiachi.Focus();
                 return;
             }
 
@@ -149,13 +144,6 @@ namespace pc_market.Forms {
                 txtTenkhach.Focus();
                 return;
             }
-
-            if (txtDiachi.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải nhập địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtDiachi.Focus();
-                return;
-            }
-
 
             if (mskDienthoai.Text == "(   )    -") {
                 MessageBox.Show("Bạn phải nhập điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

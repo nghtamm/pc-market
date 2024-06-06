@@ -138,6 +138,18 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Classes\Functions.cs" />
+        <Compile Include="Forms\Form_DataStorage.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_DataStorage.Designer.cs">
+          <DependentUpon>Form_DataStorage.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Forms\Form_HoaDonNhap.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Forms\Form_HoaDonNhap.Designer.cs">
+          <DependentUpon>Form_HoaDonNhap.cs</DependentUpon>
+        </Compile>
         <Compile Include="Forms\Form_KhachHang.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -194,6 +206,12 @@
         </Compile>
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <EmbeddedResource Include="Forms\Form_DataStorage.resx">
+          <DependentUpon>Form_DataStorage.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Forms\Form_HoaDonNhap.resx">
+          <DependentUpon>Form_HoaDonNhap.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Forms\Form_KhachHang.resx">
           <DependentUpon>Form_KhachHang.cs</DependentUpon>
         </EmbeddedResource>

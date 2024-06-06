@@ -69,6 +69,8 @@ namespace pc_market.Forms {
             this.button6 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -264,9 +266,9 @@ namespace pc_market.Forms {
             // 
             this.button5.BackColor = System.Drawing.Color.White;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(1121, 920);
+            this.button5.Location = new System.Drawing.Point(1121, 908);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 30);
+            this.button5.Size = new System.Drawing.Size(150, 40);
             this.button5.TabIndex = 26;
             this.button5.Text = "Bỏ qua";
             this.button5.UseVisualStyleBackColor = false;
@@ -277,9 +279,9 @@ namespace pc_market.Forms {
             this.button4.BackColor = System.Drawing.Color.White;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(696, 920);
+            this.button4.Location = new System.Drawing.Point(696, 908);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 30);
+            this.button4.Size = new System.Drawing.Size(150, 40);
             this.button4.TabIndex = 25;
             this.button4.Text = "Lưu";
             this.button4.UseVisualStyleBackColor = false;
@@ -288,9 +290,9 @@ namespace pc_market.Forms {
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(471, 920);
+            this.button3.Location = new System.Drawing.Point(471, 908);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 30);
+            this.button3.Size = new System.Drawing.Size(150, 40);
             this.button3.TabIndex = 24;
             this.button3.Text = "Xóa";
             this.button3.UseVisualStyleBackColor = true;
@@ -299,9 +301,9 @@ namespace pc_market.Forms {
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(261, 920);
+            this.button2.Location = new System.Drawing.Point(261, 908);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 30);
+            this.button2.Size = new System.Drawing.Size(150, 40);
             this.button2.TabIndex = 23;
             this.button2.Text = "Sửa";
             this.button2.UseVisualStyleBackColor = true;
@@ -310,9 +312,9 @@ namespace pc_market.Forms {
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(46, 920);
+            this.button1.Location = new System.Drawing.Point(46, 908);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 30);
+            this.button1.Size = new System.Drawing.Size(150, 40);
             this.button1.TabIndex = 22;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
@@ -321,7 +323,7 @@ namespace pc_market.Forms {
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(46, 655);
+            this.dataGridView1.Location = new System.Drawing.Point(46, 647);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1225, 231);
             this.dataGridView1.TabIndex = 27;
@@ -331,7 +333,7 @@ namespace pc_market.Forms {
             // 
             this.textBox3.Location = new System.Drawing.Point(788, 92);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(483, 20);
+            this.textBox3.Size = new System.Drawing.Size(436, 20);
             this.textBox3.TabIndex = 29;
             this.textBox3.TextChanged += new System.EventHandler(this.ImportPrice_TextChanged);
             // 
@@ -348,7 +350,7 @@ namespace pc_market.Forms {
             // 
             this.textBox4.Location = new System.Drawing.Point(788, 145);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(483, 20);
+            this.textBox4.Size = new System.Drawing.Size(436, 20);
             this.textBox4.TabIndex = 31;
             // 
             // label13
@@ -436,6 +438,7 @@ namespace pc_market.Forms {
             this.label18.Size = new System.Drawing.Size(41, 21);
             this.label18.TabIndex = 40;
             this.label18.Text = "tháng";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button6
             // 
@@ -460,19 +463,41 @@ namespace pc_market.Forms {
             this.button7.BackColor = System.Drawing.Color.White;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.Black;
-            this.button7.Location = new System.Drawing.Point(912, 920);
+            this.button7.Location = new System.Drawing.Point(912, 908);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 30);
+            this.button7.Size = new System.Drawing.Size(150, 40);
             this.button7.TabIndex = 43;
             this.button7.Text = "Tìm kiếm";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(1230, 93);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(41, 21);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "VNĐ";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label20
+            // 
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(1230, 146);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(41, 21);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "VNĐ";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form_PC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 985);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.button6);
@@ -527,6 +552,9 @@ namespace pc_market.Forms {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
 
         private System.Windows.Forms.Button button7;
 
