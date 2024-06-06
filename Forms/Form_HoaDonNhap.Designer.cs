@@ -81,7 +81,7 @@ namespace pc_market.Forms {
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1250, 60);
+            this.label1.Size = new System.Drawing.Size(1150, 60);
             this.label1.TabIndex = 1;
             this.label1.Text = "HÓA ĐƠN NHẬP HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -559,23 +559,23 @@ namespace pc_market.Forms {
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Button button6;
+        public System.Windows.Forms.Button button6;
 
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
 
         private System.Windows.Forms.Label label19;
 
-        private System.Windows.Forms.Button button5;
+        public System.Windows.Forms.Button button5;
 
-        private System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label18;
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button button4;
 
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button1;
 
         private System.Windows.Forms.Label label17;
 
@@ -590,11 +590,11 @@ namespace pc_market.Forms {
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label14;
 
-        private System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.ComboBox comboBox3;
 
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label12;
 
         private System.Windows.Forms.TextBox textBox6;
@@ -602,13 +602,13 @@ namespace pc_market.Forms {
 
         private System.Windows.Forms.GroupBox groupBox2;
 
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox4;
 
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        public System.Windows.Forms.MaskedTextBox maskedTextBox1;
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox comboBox2;
 
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
@@ -622,7 +622,7 @@ namespace pc_market.Forms {
 
         private System.Windows.Forms.Label label3;
 
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.GroupBox groupBox1;

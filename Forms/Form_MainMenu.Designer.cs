@@ -173,14 +173,14 @@ namespace pc_market
             // receiptBuy
             // 
             this.receiptBuy.Name = "receiptBuy";
-            this.receiptBuy.Size = new System.Drawing.Size(152, 22);
+            this.receiptBuy.Size = new System.Drawing.Size(150, 22);
             this.receiptBuy.Text = "Hóa đơn nhập";
             this.receiptBuy.Click += new System.EventHandler(this.Receipt_HDN_Click);
             // 
             // receiptSell
             // 
             this.receiptSell.Name = "receiptSell";
-            this.receiptSell.Size = new System.Drawing.Size(152, 22);
+            this.receiptSell.Size = new System.Drawing.Size(150, 22);
             this.receiptSell.Text = "Hóa đơn bán";
             this.receiptSell.Click += new System.EventHandler(this.Receipt_HDB_Click);
             // 
@@ -219,13 +219,14 @@ namespace pc_market
             // searchBuyReceipt
             // 
             this.searchBuyReceipt.Name = "searchBuyReceipt";
-            this.searchBuyReceipt.Size = new System.Drawing.Size(150, 22);
+            this.searchBuyReceipt.Size = new System.Drawing.Size(152, 22);
             this.searchBuyReceipt.Text = "Hóa đơn nhập";
+            this.searchBuyReceipt.Click += new System.EventHandler(this.Search_HDN_Click);
             // 
             // searchSellReceipt
             // 
             this.searchSellReceipt.Name = "searchSellReceipt";
-            this.searchSellReceipt.Size = new System.Drawing.Size(150, 22);
+            this.searchSellReceipt.Size = new System.Drawing.Size(152, 22);
             this.searchSellReceipt.Text = "Hóa đơn bán";
             // 
             // aboutUsMenuItem

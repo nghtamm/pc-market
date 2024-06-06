@@ -73,5 +73,10 @@ namespace pc_market {
             Forms.Form_HoaDonNhap formHoaDonNhap = new Forms.Form_HoaDonNhap();
             formHoaDonNhap.Show();
         }
+
+        public void Search_HDN_Click(object sender, EventArgs e) {
+            Forms.Form_SearchHDN formSearchHDN = new Forms.Form_SearchHDN();
+            formSearchHDN.Show();
+        }
     }
 }
