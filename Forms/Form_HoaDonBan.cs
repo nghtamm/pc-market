@@ -109,7 +109,7 @@ namespace pc_market.Forms
             str = "SELECT tongTien FROM hoaDonBan WHERE maHDB = N'" + txtMaHDBan.Text + "'";
             txtTongtien.Text = Functions.GetFieldValues(str);
 
-            lblBangchu.Text = "Bằng chữ: " + Functions.ChuyenSoSangChu(txtTongtien.Text);
+            lblBangchu.Text = "Bằng chữ: " + Functions.ConvertNumericToText(txtTongtien.Text);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace pc_market.Forms
             sql = "UPDATE hoaDonBan SET tongTien =" + Tongmoi + " WHERE maHDB = N'" + txtMaHDBan.Text + "'";
             Functions.RunSQL(sql);
             txtTongtien.Text = Tongmoi.ToString();
-            lblBangchu.Text = "Bằng chữ: " + Functions.ChuyenSoSangChu(Tongmoi.ToString());
+            lblBangchu.Text = "Bằng chữ: " + Functions.ConvertNumericToText(Tongmoi.ToString());
             ResetValuesHang();
             btnXoa.Enabled = true;
             btnThem.Enabled = true;
@@ -370,7 +370,7 @@ namespace pc_market.Forms
             sql = "UPDATE hoaDonBan SET tongTien =" + Tongmoi + " WHERE maHDB = N'" +Mahoadon + "'";
             Functions.RunSQL(sql);
             txtTongtien.Text = Tongmoi.ToString();
-            lblBangchu.Text = "Bằng chữ: " + Functions.ChuyenSoSangChu(Tongmoi.ToString());
+            lblBangchu.Text = "Bằng chữ: " + Functions.ConvertNumericToText(Tongmoi.ToString());
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -413,9 +413,9 @@ namespace pc_market.Forms
             int hang = 0, cot = 0;
             DataTable tblThongtinHD, tblThongtinHang;
             exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
-            exSheet = exBook.Worksheets[1];
+            exSheet = (COMExcel.Worksheet)exBook.Worksheets[1];
             // Định dạng chung
-            exRange = exSheet.Cells[1, 1];
+            exRange = (COMExcel.Range)exSheet.Cells[1, 1];
             exRange.Range["A1:B3"].Font.Size = 10;
             exRange.Range["A1:B3"].Font.Name = "Times new roman";
             exRange.Range["A1:B3"].Font.Bold = true;
@@ -477,24 +477,24 @@ namespace pc_market.Forms
             for (hang = 0; hang <= tblThongtinHang.Rows.Count - 1; hang++)
             {
                 //Điền số thứ tự vào cột 1 từ dòng 12
-                exSheet.Cells[1][hang + 12] = hang + 1;
+                exSheet.Cells[hang + 12, 1] = hang + 1;
                 for (cot = 0; cot <= tblThongtinHang.Columns.Count - 1; cot++)
                     //Điền thông tin hàng từ cột thứ 2, dòng 12
-                    exSheet.Cells[cot + 2][hang + 12] = tblThongtinHang.Rows[hang][cot].ToString();
+                    exSheet.Cells[hang + 12, cot + 2] = tblThongtinHang.Rows[hang][cot].ToString();
             }
-            exRange = exSheet.Cells[cot][hang + 14];
+            exRange = (COMExcel.Range)exSheet.Cells[hang + 14, cot];
             exRange.Font.Bold = true;
             exRange.Value2 = "Tổng tiền:";
-            exRange = exSheet.Cells[cot + 1][hang + 14];
+            exRange = (COMExcel.Range)exSheet.Cells[hang + 14, cot + 1];
             exRange.Font.Bold = true;
             exRange.Value2 = tblThongtinHD.Rows[0][2].ToString();
-            exRange = exSheet.Cells[1][hang + 15]; //Ô A1 
+            exRange = (COMExcel.Range)exSheet.Cells[hang + 15, 1]; //Ô A1
             exRange.Range["A1:F1"].MergeCells = true;
             exRange.Range["A1:F1"].Font.Bold = true;
             exRange.Range["A1:F1"].Font.Italic = true;
             exRange.Range["A1:F1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignRight;
-            exRange.Range["A1:F1"].Value = "Bằng chữ: " + Functions.ChuyenSoSangChu(tblThongtinHD.Rows[0][2].ToString());
-            exRange = exSheet.Cells[4][hang + 17]; //Ô A1 
+            exRange.Range["A1:F1"].Value = "Bằng chữ: " + Functions.ConvertNumericToText(tblThongtinHD.Rows[0][2].ToString());
+            exRange = (COMExcel.Range)exSheet.Cells[hang + 17, 4]; //Ô A1
             exRange.Range["A1:C1"].MergeCells = true;
             exRange.Range["A1:C1"].Font.Italic = true;
             exRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;

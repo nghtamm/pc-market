@@ -204,11 +204,11 @@
         <Compile Include="Forms\Form_HoaDonBan.Designer.cs">
           <DependentUpon>Form_HoaDonBan.cs</DependentUpon>
         </Compile>
-        <Compile Include="Forms\Form_TimHDB.cs">
+        <Compile Include="Forms\Form_SearchHDB.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Forms\Form_TimHDB.Designer.cs">
-          <DependentUpon>Form_TimHDB.cs</DependentUpon>
+        <Compile Include="Forms\Form_SearchHDB.Designer.cs">
+          <DependentUpon>Form_SearchHDB.cs</DependentUpon>
         </Compile>
         <Compile Include="Forms\Form_SearchHDN.cs">
           <SubType>Form</SubType>
@@ -251,8 +251,8 @@
         <EmbeddedResource Include="Forms\Form_HoaDonBan.resx">
           <DependentUpon>Form_HoaDonBan.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Forms\Form_TimHDB.resx">
-          <DependentUpon>Form_TimHDB.cs</DependentUpon>
+        <EmbeddedResource Include="Forms\Form_SearchHDB.resx">
+          <DependentUpon>Form_SearchHDB.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Forms\Form_SearchHDN.resx">
           <DependentUpon>Form_SearchHDN.cs</DependentUpon>

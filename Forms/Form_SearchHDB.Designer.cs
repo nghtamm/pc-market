@@ -1,6 +1,6 @@
 ﻿namespace pc_market.Forms
 {
-    partial class Form_TimHDB
+    partial class Form_SearchHDB
     {
         /// <summary>
         /// Required designer variable.
@@ -241,7 +241,7 @@
             this.Controls.Add(this.txtThang);
             this.Controls.Add(this.DataGridView);
             this.Controls.Add(this.label6);
-            this.Name = "Form_TimHDB";
+            this.Name = "Form_SearchHDB";
             this.Text = "Tìm Hóa đơn bán";
             this.Load += new System.EventHandler(this.Form_TimHDB_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();

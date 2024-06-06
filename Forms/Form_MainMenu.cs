@@ -69,11 +69,6 @@ namespace pc_market {
             formHoaDonBan.Show();
         }
 
-        private void searchSellReceipt_Click(object sender, EventArgs e)
-        {
-            Forms.Form_TimHDB formTimHDB = new Forms.Form_TimHDB();
-            formTimHDB.Show();
-          
         public void Receipt_HDN_Click(object sender, EventArgs e) {
             Forms.Form_HoaDonNhap formHoaDonNhap = new Forms.Form_HoaDonNhap();
             formHoaDonNhap.Show();
@@ -82,6 +77,11 @@ namespace pc_market {
         public void Search_HDN_Click(object sender, EventArgs e) {
             Forms.Form_SearchHDN formSearchHDN = new Forms.Form_SearchHDN();
             formSearchHDN.Show();
+        }
+
+        private void Search_HDB_Click(object sender, EventArgs e) {
+            Forms.Form_SearchHDB formSearchHDB = new Forms.Form_SearchHDB();
+            formSearchHDB.Show();
         }
     }
 }

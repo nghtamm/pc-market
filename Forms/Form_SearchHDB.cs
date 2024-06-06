@@ -12,10 +12,10 @@ using pc_market.Classes;
 
 namespace pc_market.Forms
 {
-    public partial class Form_TimHDB : Form
+    public partial class Form_SearchHDB : Form
     {
         DataTable tblHDB;
-        public Form_TimHDB()
+        public Form_SearchHDB()
         {
             InitializeComponent();
         }
