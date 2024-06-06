@@ -53,5 +53,11 @@ namespace pc_market {
             Forms.Form_HoaDonBan formHoaDonBan = new Forms.Form_HoaDonBan();
             formHoaDonBan.Show();
         }
+
+        private void searchSellReceipt_Click(object sender, EventArgs e)
+        {
+            Forms.Form_TimHDB formTimHDB = new Forms.Form_TimHDB();
+            formTimHDB.Show();
+        }
     }
 }
