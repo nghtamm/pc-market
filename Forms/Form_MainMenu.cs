@@ -69,6 +69,11 @@ namespace pc_market {
             formHoaDonBan.Show();
         }
 
+        private void searchSellReceipt_Click(object sender, EventArgs e)
+        {
+            Forms.Form_TimHDB formTimHDB = new Forms.Form_TimHDB();
+            formTimHDB.Show();
+          
         public void Receipt_HDN_Click(object sender, EventArgs e) {
             Forms.Form_HoaDonNhap formHoaDonNhap = new Forms.Form_HoaDonNhap();
             formHoaDonNhap.Show();

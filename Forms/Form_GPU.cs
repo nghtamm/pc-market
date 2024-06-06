@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using OfficeOpenXml;
-using Excel = Microsoft.Office.Interop.Excel;
+/*using OfficeOpenXml;
+using Excel = Microsoft.Office.Interop.Excel;*/
 
 namespace pc_market.Forms {
     public partial class Form_GPU : Form {
@@ -41,18 +41,20 @@ namespace pc_market.Forms {
 
         private void Load_DataGridView() {
             string sql;
-            sql = "SELECT * FROM GPU";
+            sql = "SELECT maGPU, tenGPU, loaiGPU, dungLuong,a.maHSX,b.tenHSX,moTa FROM GPU as a INNER JOIN hangSanXuat as b ON a.maHSX = b.maHSX";
             tblGPU = Classes.Functions.GetDataToTable(sql);
             dgridGPU.DataSource = tblGPU;
+            dgridGPU.Columns[4].Visible = false; // Ẩn cột maHSX
 
             dgridGPU.Columns[0].HeaderText = "Mã GPU";
             dgridGPU.Columns[1].HeaderText = "Tên GPU";
             dgridGPU.Columns[2].HeaderText = "Loại";
             dgridGPU.Columns[3].HeaderText = "Dung lượng";
-            dgridGPU.Columns[4].HeaderText = "Hãng sản xuất";
-            dgridGPU.Columns[5].HeaderText = "Mô tả";
+            dgridGPU.Columns[5].HeaderText = "Tên HSX";
+            dgridGPU.Columns[6].HeaderText = "Mô tả";
             dgridGPU.Columns[0].Width = 70;
             dgridGPU.Columns[1].Width = 200;
+            dgridGPU.Columns[2].Width = 70;
             dgridGPU.Columns[4].Width = 70;
             dgridGPU.AllowUserToAddRows = false;
             dgridGPU.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -249,7 +251,7 @@ namespace pc_market.Forms {
             dgridGPU.DataSource = tblGPU;
         }
 
-        private void ExportExcel(string path) {
+        /*private void ExportExcel(string path) {
             //Khởi tạo excel
             Excel.Application application = new Excel.Application();
             application.Application.Workbooks.Add(Type.Missing);
@@ -282,7 +284,7 @@ namespace pc_market.Forms {
                     MessageBox.Show("Xuat file khong thanh cong\n" + ex.Message);
                 }
             }
-        }
+        }*/
 
         private void btnDong_Click(object sender, EventArgs e) {
             this.Close();

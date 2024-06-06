@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using System.IO;
-using OfficeOpenXml;
-using Excel = Microsoft.Office.Interop.Excel;
+/*using System.IO;*/
+/*using OfficeOpenXml;
+using Excel = Microsoft.Office.Interop.Excel;*/
 
 namespace pc_market.Forms {
     public partial class Form_NCC : Form {
@@ -202,7 +202,7 @@ namespace pc_market.Forms {
             this.Close();
         }
 
-        private void ExportExcel(string path) {
+/*        private void ExportExcel(string path) {
             //Khởi tạo excel
             Excel.Application application = new Excel.Application();
             application.Application.Workbooks.Add(Type.Missing);
@@ -235,7 +235,7 @@ namespace pc_market.Forms {
                     MessageBox.Show("Xuat file khong thanh cong\n" + ex.Message);
                 }
             }
-        }
+        }*/
 
         private void btnTimkiem_Click(object sender, EventArgs e) {
             string sql;

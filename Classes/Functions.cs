@@ -2,6 +2,8 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Windows.Forms;
 
 namespace pc_market.Classes {
     public class Functions {
@@ -17,7 +19,7 @@ namespace pc_market.Classes {
             conn = new SqlConnection(connString);
             try {
                 conn.Open();
-                // MessageBox.Show("Kết nối thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                /*MessageBox.Show("Kết nối thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
             }
             catch (SqlException e) {
                 MessageBox.Show($"Kết nối không thành công! \nMã lỗi: {e.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,9 +99,19 @@ namespace pc_market.Classes {
             reader.Close();
             return key;
         }
+        public static bool CheckKey(string sql)
+        {
+            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Functions.conn);
+            DataTable table = new DataTable();
+            Mydata.Fill(table);
+            if (table.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
 
         // Đổ dữ liệu vào ComboBox
-        public static void FillCombo(string query, ComboBox comboBox, string value, string name) {
+        public static void FillCombo(string query, System.Windows.Forms.ComboBox comboBox, string value, string name) {
             SqlDataAdapter data = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             data.Fill(table);
@@ -108,14 +120,37 @@ namespace pc_market.Classes {
             comboBox.ValueMember = value; // Trường giá trị
             comboBox.DisplayMember = name; // Trường hiển thị
         }
-
-        // Đổ dữ liệu vào ComboBox (không sử dụng tên trường hiển thị)
-        public static void FillCombo1(string query, ComboBox comboBox, string value) {
+      
+        // Đổ dữ liệu vào combo box với định dạng mã + tên
+        /*public static void FillCombo1(string query, ComboBox comboBox, string value, string displayExpression)
+        {
+            // Create a SqlDataAdapter and DataTable
             SqlDataAdapter data = new SqlDataAdapter(query, conn);
             DataTable table = new DataTable();
             data.Fill(table);
+
+            // Add a new "DisplayMember" column to the DataTable
+            table.Columns.Add("DisplayMember", typeof(string)).Expression = displayExpression;
+
+            // Bind the DataTable to the combobox
             comboBox.DataSource = table;
-            comboBox.ValueMember = value; // Trường giá trị
+
+            // Set the ValueMember and DisplayMember properties
+            comboBox.ValueMember = value;
+            comboBox.DisplayMember = "DisplayMember";
+
+            // Set the selected index to -1
+            comboBox.SelectedIndex = -1;
+        }*/
+        // Hàm này tương tự như hàm FillCombo nhưng có thêm khả năng định dạng văn bản hiển thị trong combobox.
+
+        public static bool IsDate(string d)
+        {
+            string[] parts = d.Split('/');
+            if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) && (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
+                return true;
+            else
+                return false;
         }
 
         // Chuyển đổi định dạng ngày tháng năm từ dd/MM/yyyy thành MM/dd/yyyy
