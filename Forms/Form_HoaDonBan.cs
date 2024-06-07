@@ -424,15 +424,15 @@ namespace pc_market.Forms
             exRange.Range["B1:B1"].ColumnWidth = 15;
             exRange.Range["A1:B1"].MergeCells = true;
             exRange.Range["A1:B1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A1:B1"].Value = "Cửa hàng máy tính";
+            exRange.Range["A1:B1"].Value = "Cửa hàng máy tính PC Market";
 
             exRange.Range["A2:B2"].MergeCells = true;
             exRange.Range["A2:B2"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A2:B2"].Value = "Đống Đa - Hà Nội";
+            exRange.Range["A2:B2"].Value = "Số 12 Chùa Bộc, Đống Đa, Hà Nội";
 
             exRange.Range["A3:B3"].MergeCells = true;
             exRange.Range["A3:B3"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-            exRange.Range["A3:B3"].Value = "Điện thoại: (04)37562222";
+            exRange.Range["A3:B3"].Value = "Điện thoại: 0123456789";
 
 
             exRange.Range["C2:E2"].Font.Size = 16;
