@@ -75,66 +75,68 @@ namespace pc_market.Forms
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
-            private void btin_Click(object sender, EventArgs e)
-{
-    COMExcel.Application exApp = new COMExcel.Application();
-    COMExcel.Workbook exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
-    COMExcel.Worksheet exSheet = (COMExcel.Worksheet)exBook.Worksheets[1];
+            private void btin_Click(object sender, EventArgs e) {
+            COMExcel.Application exApp = new COMExcel.Application();
+            COMExcel.Workbook exBook = exApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
+            COMExcel.Worksheet exSheet = (COMExcel.Worksheet)exBook.Worksheets[1];
 
-    // Định dạng tiêu đề báo cáo
-    COMExcel.Range exRange = (COMExcel.Range)exSheet.Cells[1, 1];
-    exRange.Range["E10:G10"].Font.Size = 14;
-    exRange.Range["E10:G10"].Font.Name = "Times New Roman";
-    exRange.Range["E10:G10"].Font.Bold = true;
-    exRange.Range["E10:G10"].Font.ColorIndex = 3; // Màu đỏ
-    exRange.Range["E10:G10"].MergeCells = true;
-    exRange.Range["E10:G10"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-    exRange.Range["E10:G10"].Value = "Danh sách Bán hàng";
+            // Định dạng tiêu đề báo cáo
+            COMExcel.Range exRange = (COMExcel.Range)exSheet.Cells[1, 1];
+            exRange.Range["E10:G10"].Font.Size = 14;
+            exRange.Range["E10:G10"].Font.Name = "Times New Roman";
+            exRange.Range["E10:G10"].Font.Bold = true;
+            exRange.Range["E10:G10"].Font.ColorIndex = 3; // Màu đỏ
+            exRange.Range["E10:G10"].MergeCells = true;
+            exRange.Range["E10:G10"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["E10:G10"].Value = "Danh sách Bán hàng";
 
-    // Định dạng tiêu đề cột
-    exRange.Range["A12:K12"].Font.Bold = true;
-    exRange.Range["A12:K12"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-    exRange.Range["A12"].Value = "STT";
-    exRange.Range["B12"].Value = "Mã hóa đơn";
-    exRange.Range["C12"].Value = "Tên sản phẩm";
-    exRange.Range["D12"].Value = "Mã sản phẩm";
-    exRange.Range["E12"].Value = "Số lượng bán";
-    exRange.Range["F12"].Value = "Đơn giá bán";
-    exRange.Range["G12"].Value = "Khuyến mãi";
-    exRange.Range["H12"].Value = "Thành tiền";
-    exRange.Range["I12"].Value = "Ngày bán";
-    exRange.Range["J12"].Value = "Tên khách hàng";
-    exRange.Range["K12"].Value = "Tên nhân viên bán";
+            // Định dạng tiêu đề cột
+            exRange.Range["A12:J12"].Font.Bold = true;
+            exRange.Range["A12:J12"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange.Range["A12"].Value = "STT";
+            exRange.Range["B12"].Value = "Mã hóa đơn";
+            exRange.Range["C12"].Value = "Tên sản phẩm";
+            exRange.Range["D12"].Value = "Mã sản phẩm";
+            exRange.Range["E12"].Value = "Số lượng bán";
+            exRange.Range["F12"].Value = "Đơn giá bán";
+            exRange.Range["G12"].Value = "Thành tiền";
+            exRange.Range["H12"].Value = "Ngày bán";
+            exRange.Range["I12"].Value = "Tên khách hàng";
+            exRange.Range["J12"].Value = "Tên nhân viên bán";
 
-    // Điền dữ liệu
-    for (int row = 0; row < tblCTHDB.Rows.Count; row++)
-    {
-        ((COMExcel.Range)exSheet.Cells[row + 13, 1]).Value2 = row + 1; // STT
-        for (int col = 0; col < tblCTHDB.Columns.Count; col++)
-        {
-            if (tblCTHDB.Columns[col].ColumnName == "ngayban")
+            // Điền dữ liệu
+            for (int row = 0; row < tblCTHDB.Rows.Count; row++)
             {
-                DateTime ngayNhap = Convert.ToDateTime(tblCTHDB.Rows[row]["ngayban"]);
-                ((COMExcel.Range)exSheet.Cells[row + 13, col + 2]).Value2 = ngayNhap.ToShortDateString();
+                ((COMExcel.Range)exSheet.Cells[row + 13, 1]).Value2 = row + 1; // STT
+                for (int col = 0; col < tblCTHDB.Columns.Count; col++)
+                {
+                    if (tblCTHDB.Columns[col].ColumnName == "ngayban")
+                    {
+                        DateTime ngayNhap = Convert.ToDateTime(tblCTHDB.Rows[row]["ngayban"]);
+                        ((COMExcel.Range)exSheet.Cells[row + 13, col + 2]).Value2 = ngayNhap.ToShortDateString();
+                    }
+                    else
+                    {
+                        ((COMExcel.Range)exSheet.Cells[row + 13, col + 2]).Value2 = tblCTHDB.Rows[row][col].ToString();
+                    }
+                }
             }
-            else
+
+            // Điền dữ liệu vào phần tổng số lượng bán
+            exRange = (COMExcel.Range)exSheet.Cells[1, 1]; // Bắt đầu từ cột N
+            exRange.Range["N12:O12"].Font.Bold = true;
+            exRange.Range["N12:O12"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
+            exRange = (COMExcel.Range)exSheet.Cells[12, 14]; // Set exRange to cell N12
+            exRange.Value2 = "Tên sản phẩm";
+            exRange = (COMExcel.Range)exSheet.Cells[12, 15]; // Set exRange to cell O12
+            exRange.Value2 = "Số lượng bán";
+            for (int row = 0; row < tblCTHDB1.Rows.Count; row++)
             {
-                ((COMExcel.Range)exSheet.Cells[row + 13, col + 2]).Value2 = tblCTHDB.Rows[row][col].ToString();
+                ((COMExcel.Range)exSheet.Cells[row + 13, 14]).Value2 = tblCTHDB1.Rows[row][0].ToString();
+                ((COMExcel.Range)exSheet.Cells[row + 13, 15]).Value2 = tblCTHDB1.Rows[row][1].ToString();
             }
+            exSheet.Columns.AutoFit();
+            exApp.Visible = true;
         }
-    }
-
-    // Điền dữ liệu vào phần tổng số lượng bán
-    exRange = (COMExcel.Range)exSheet.Cells[1, 14]; // Bắt đầu từ cột N
-    exRange.Range["N12"].Value = "Tên sản phẩm";
-    exRange.Range["O12"].Value = "Số lượng bán";
-    for (int row = 0; row < tblCTHDB1.Rows.Count; row++)
-    {
-        ((COMExcel.Range)exSheet.Cells[row + 13, 14]).Value2 = tblCTHDB1.Rows[row][0].ToString();
-        ((COMExcel.Range)exSheet.Cells[row + 13, 15]).Value2 = tblCTHDB1.Rows[row][1].ToString();
-    }
-
-    exApp.Visible = true;
-}
     }
 }
