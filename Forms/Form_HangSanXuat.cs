@@ -20,7 +20,7 @@ namespace pc_market.Forms
         }
         DataTable thaumv;
         private void frm_HSX_Load(object sender, EventArgs e) {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             txtmaHSX.Enabled = false;
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;

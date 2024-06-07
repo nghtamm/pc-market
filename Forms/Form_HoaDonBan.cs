@@ -24,7 +24,7 @@ namespace pc_market.Forms
         DataTable tblCTHDB;
         private void frm_Hoadonban_Load(object sender, EventArgs e)
         {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             btnThem.Enabled = true;
             btnLuu.Enabled = false;
             btnXoa.Enabled = false;

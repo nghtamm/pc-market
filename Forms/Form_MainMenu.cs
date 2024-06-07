@@ -113,5 +113,10 @@ namespace pc_market {
             Forms.Form_BaoCaoNhap formBaoCaoNhap = new Forms.Form_BaoCaoNhap();
             formBaoCaoNhap.Show();
         }
+
+        private void Report_DoanhThu_Click(object sender, EventArgs e) {
+            Forms.Form_DoanhThu formDoanhThu = new Forms.Form_DoanhThu();
+            formDoanhThu.Show();
+        }
     }
 }

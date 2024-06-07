@@ -10,7 +10,7 @@ namespace pc_market {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.Form_BaoCaoBan());
+            Application.Run(new Forms.Form_Login());
         }
     }
 }

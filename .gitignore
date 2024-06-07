@@ -1,3 +1,7 @@
+.idea
+.idea.pc-market
+.idea.pc-market.dir
+
 bin/
 obj/
 /packages/

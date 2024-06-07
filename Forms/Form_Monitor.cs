@@ -22,7 +22,7 @@ namespace pc_market.Forms
 
         private void frm_MH_Load(object sender, EventArgs e)
         {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             txtmaMH.Enabled = false;
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;

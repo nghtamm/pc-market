@@ -14,7 +14,7 @@ namespace pc_market.Forms {
         }
 
         public void Form_BCN_Load(object sender, EventArgs e) {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             Invoice_DataGridView_Load();
             Item_DataGridView_Load();
         }

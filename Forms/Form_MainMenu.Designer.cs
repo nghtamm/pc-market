@@ -216,6 +216,7 @@ namespace pc_market
             this.reportIncome.Name = "reportIncome";
             this.reportIncome.Size = new System.Drawing.Size(176, 22);
             this.reportIncome.Text = "Báo cáo doanh thu";
+            this.reportIncome.Click += new System.EventHandler(this.Report_DoanhThu_Click);
             // 
             // searchMenuItem
             // 

@@ -19,7 +19,7 @@ namespace pc_market.Forms
             InitializeComponent();
         }
         private void frm_CPU_Load(object sender, EventArgs e) {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             txtmaCPU.Enabled = false;
             btnLuu.Enabled = false;
             btnBoqua.Enabled = false;

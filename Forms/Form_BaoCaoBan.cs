@@ -23,7 +23,7 @@ namespace pc_market.Forms
         
         private void frm_MH_Load(object sender, EventArgs e)
         {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             Load_dataGridView();
             Load_dataGridView1();
         }

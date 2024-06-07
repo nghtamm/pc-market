@@ -22,7 +22,7 @@ namespace pc_market.Forms
 
         private void Form_TimHDB_Load(object sender, EventArgs e)
         {
-            Classes.Functions.Connect();
+            // Classes.Functions.Connect();
             ResetValues();
             DataGridView.DataSource = null;
         }
