@@ -69,7 +69,6 @@ namespace pc_market.Forms {
 
 
         private void dataGridView_Click(object sender, EventArgs e) {
-            string ma;
             if (btnthem.Enabled == false) {
                 MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaRam.Focus();

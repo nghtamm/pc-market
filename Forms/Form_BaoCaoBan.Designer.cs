@@ -76,6 +76,7 @@ namespace pc_market.Forms
             this.btnexport.TabIndex = 34;
             this.btnexport.Text = "Export Excel";
             this.btnexport.UseVisualStyleBackColor = true;
+            this.btnexport.Click += new System.EventHandler(this.btin_Click);
             // 
             // Form_BaoCaoBan
             // 
@@ -91,6 +92,7 @@ namespace pc_market.Forms
             this.Name = "Form_BaoCaoBan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_BaoCaoBan";
+            this.Load += new System.EventHandler(this.frm_MH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
