@@ -195,5 +195,12 @@ namespace pc_market.Forms {
         }
 
         private void mskDienthoai_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) { }
+
+        private void Validate_KeyPress(object sender, KeyPressEventArgs e) {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 }

@@ -38,8 +38,8 @@ namespace pc_market.Forms
             dataGridView.DataSource = thaumv;
             dataGridView.Columns[0].HeaderText = "Mã HSX";
             dataGridView.Columns[1].HeaderText = "Tên HSX";
-            dataGridView.Columns[0].Width = 100;
-            dataGridView.Columns[1].Width = 300;
+            dataGridView.Columns[0].Width = 200;
+            dataGridView.Columns[1].Width = 500;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }

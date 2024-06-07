@@ -27,7 +27,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.btnXuatexcel = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnHienthids = new System.Windows.Forms.Button();
             this.btnTimkiem = new System.Windows.Forms.Button();
@@ -55,20 +54,14 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnXuatexcel
-            // 
-            this.btnXuatexcel.Location = new System.Drawing.Point(0, 0);
-            this.btnXuatexcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnXuatexcel.Name = "btnXuatexcel";
-            this.btnXuatexcel.Size = new System.Drawing.Size(100, 28);
-            this.btnXuatexcel.TabIndex = 0;
-            // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(850, 216);
-            this.btnDong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDong.BackgroundImage = global::pc_market.Properties.Resources.close;
+            this.btnDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDong.Location = new System.Drawing.Point(679, 426);
+            this.btnDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(91, 46);
+            this.btnDong.Size = new System.Drawing.Size(68, 37);
             this.btnDong.TabIndex = 38;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
@@ -76,10 +69,12 @@
             // 
             // btnHienthids
             // 
-            this.btnHienthids.Location = new System.Drawing.Point(744, 216);
-            this.btnHienthids.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnHienthids.BackgroundImage = global::pc_market.Properties.Resources.display;
+            this.btnHienthids.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnHienthids.Location = new System.Drawing.Point(508, 426);
+            this.btnHienthids.Margin = new System.Windows.Forms.Padding(2);
             this.btnHienthids.Name = "btnHienthids";
-            this.btnHienthids.Size = new System.Drawing.Size(100, 46);
+            this.btnHienthids.Size = new System.Drawing.Size(75, 37);
             this.btnHienthids.TabIndex = 37;
             this.btnHienthids.Text = "Hiển thị DS";
             this.btnHienthids.UseVisualStyleBackColor = true;
@@ -87,10 +82,12 @@
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(648, 216);
-            this.btnTimkiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnTimkiem.BackgroundImage = global::pc_market.Properties.Resources.search;
+            this.btnTimkiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTimkiem.Location = new System.Drawing.Point(436, 426);
+            this.btnTimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimkiem.Name = "btnTimkiem";
-            this.btnTimkiem.Size = new System.Drawing.Size(91, 46);
+            this.btnTimkiem.Size = new System.Drawing.Size(68, 37);
             this.btnTimkiem.TabIndex = 36;
             this.btnTimkiem.Text = "Tìm kiếm";
             this.btnTimkiem.UseVisualStyleBackColor = true;
@@ -98,10 +95,12 @@
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(552, 216);
-            this.btnBoqua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBoqua.BackgroundImage = global::pc_market.Properties.Resources.skip;
+            this.btnBoqua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBoqua.Location = new System.Drawing.Point(364, 426);
+            this.btnBoqua.Margin = new System.Windows.Forms.Padding(2);
             this.btnBoqua.Name = "btnBoqua";
-            this.btnBoqua.Size = new System.Drawing.Size(91, 46);
+            this.btnBoqua.Size = new System.Drawing.Size(68, 37);
             this.btnBoqua.TabIndex = 35;
             this.btnBoqua.Text = "Bỏ qua";
             this.btnBoqua.UseVisualStyleBackColor = true;
@@ -109,10 +108,12 @@
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(456, 216);
-            this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLuu.BackgroundImage = global::pc_market.Properties.Resources.save;
+            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLuu.Location = new System.Drawing.Point(292, 426);
+            this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(91, 46);
+            this.btnLuu.Size = new System.Drawing.Size(68, 37);
             this.btnLuu.TabIndex = 34;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
@@ -120,10 +121,12 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(360, 216);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSua.BackgroundImage = global::pc_market.Properties.Resources.edit;
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSua.Location = new System.Drawing.Point(220, 426);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(91, 46);
+            this.btnSua.Size = new System.Drawing.Size(68, 37);
             this.btnSua.TabIndex = 33;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -131,10 +134,12 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(264, 216);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXoa.BackgroundImage = global::pc_market.Properties.Resources.delete;
+            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnXoa.Location = new System.Drawing.Point(148, 426);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(91, 46);
+            this.btnXoa.Size = new System.Drawing.Size(68, 37);
             this.btnXoa.TabIndex = 32;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -142,10 +147,12 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(168, 216);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnThem.BackgroundImage = global::pc_market.Properties.Resources.add;
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnThem.Location = new System.Drawing.Point(76, 426);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(91, 46);
+            this.btnThem.Size = new System.Drawing.Size(68, 37);
             this.btnThem.TabIndex = 31;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -154,57 +161,60 @@
             // dgridGPU
             // 
             this.dgridGPU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgridGPU.Location = new System.Drawing.Point(101, 279);
-            this.dgridGPU.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgridGPU.Location = new System.Drawing.Point(76, 217);
+            this.dgridGPU.Margin = new System.Windows.Forms.Padding(2);
             this.dgridGPU.Name = "dgridGPU";
             this.dgridGPU.RowHeadersWidth = 51;
             this.dgridGPU.RowTemplate.Height = 24;
-            this.dgridGPU.Size = new System.Drawing.Size(895, 235);
+            this.dgridGPU.Size = new System.Drawing.Size(671, 191);
             this.dgridGPU.TabIndex = 30;
             this.dgridGPU.Click += new System.EventHandler(this.dgridGPU_Click);
             // 
             // txtTengpu
             // 
-            this.txtTengpu.Location = new System.Drawing.Point(176, 57);
-            this.txtTengpu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTengpu.Location = new System.Drawing.Point(124, 48);
+            this.txtTengpu.Margin = new System.Windows.Forms.Padding(2);
             this.txtTengpu.Name = "txtTengpu";
-            this.txtTengpu.Size = new System.Drawing.Size(249, 22);
+            this.txtTengpu.Size = new System.Drawing.Size(188, 20);
             this.txtTengpu.TabIndex = 27;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(56, 60);
+            this.label4.Location = new System.Drawing.Point(34, 51);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 16);
+            this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 26;
             this.label4.Text = "Tên GPU";
             // 
             // txtMagpu
             // 
-            this.txtMagpu.Location = new System.Drawing.Point(277, 69);
-            this.txtMagpu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMagpu.Location = new System.Drawing.Point(124, 23);
+            this.txtMagpu.Margin = new System.Windows.Forms.Padding(2);
             this.txtMagpu.Name = "txtMagpu";
-            this.txtMagpu.Size = new System.Drawing.Size(249, 22);
+            this.txtMagpu.Size = new System.Drawing.Size(188, 20);
             this.txtMagpu.TabIndex = 24;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(56, 30);
+            this.label2.Location = new System.Drawing.Point(34, 26);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 23;
             this.label2.Text = "Mã GPU";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(428, 12);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(240, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 26);
+            this.label1.Size = new System.Drawing.Size(357, 37);
             this.label1.TabIndex = 22;
             this.label1.Text = "CARD ĐỒ HỌA - GPU";
             // 
@@ -219,93 +229,97 @@
             this.groupBox1.Controls.Add(this.txtLoaigpu);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtTengpu);
+            this.groupBox1.Controls.Add(this.txtMagpu);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(101, 41);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(76, 69);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(895, 156);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(671, 127);
             this.groupBox1.TabIndex = 41;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chung";
             // 
             // txtMota
             // 
-            this.txtMota.Location = new System.Drawing.Point(591, 59);
-            this.txtMota.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMota.Location = new System.Drawing.Point(448, 48);
+            this.txtMota.Margin = new System.Windows.Forms.Padding(2);
             this.txtMota.Name = "txtMota";
-            this.txtMota.Size = new System.Drawing.Size(249, 75);
+            this.txtMota.Size = new System.Drawing.Size(188, 62);
             this.txtMota.TabIndex = 49;
             this.txtMota.Text = "";
             // 
             // cboMahsx
             // 
             this.cboMahsx.FormattingEnabled = true;
-            this.cboMahsx.Location = new System.Drawing.Point(591, 26);
-            this.cboMahsx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cboMahsx.Location = new System.Drawing.Point(448, 21);
+            this.cboMahsx.Margin = new System.Windows.Forms.Padding(2);
             this.cboMahsx.Name = "cboMahsx";
-            this.cboMahsx.Size = new System.Drawing.Size(249, 24);
+            this.cboMahsx.Size = new System.Drawing.Size(188, 21);
             this.cboMahsx.TabIndex = 48;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(471, 63);
+            this.label8.Location = new System.Drawing.Point(358, 51);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 16);
+            this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 44;
             this.label8.Text = "Mô tả";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(469, 30);
+            this.label6.Location = new System.Drawing.Point(357, 24);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 16);
+            this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 32;
             this.label6.Text = "Hãng sản xuất";
             // 
             // txtDungluong
             // 
-            this.txtDungluong.Location = new System.Drawing.Point(176, 112);
-            this.txtDungluong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtDungluong.Location = new System.Drawing.Point(124, 93);
+            this.txtDungluong.Margin = new System.Windows.Forms.Padding(2);
             this.txtDungluong.Name = "txtDungluong";
-            this.txtDungluong.Size = new System.Drawing.Size(249, 22);
+            this.txtDungluong.Size = new System.Drawing.Size(188, 20);
             this.txtDungluong.TabIndex = 31;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(56, 116);
+            this.label5.Location = new System.Drawing.Point(34, 96);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 16);
+            this.label5.Size = new System.Drawing.Size(62, 13);
             this.label5.TabIndex = 30;
             this.label5.Text = "Dung lượng";
             // 
             // txtLoaigpu
             // 
-            this.txtLoaigpu.Location = new System.Drawing.Point(176, 84);
-            this.txtLoaigpu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtLoaigpu.Location = new System.Drawing.Point(124, 70);
+            this.txtLoaigpu.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoaigpu.Name = "txtLoaigpu";
-            this.txtLoaigpu.Size = new System.Drawing.Size(249, 22);
+            this.txtLoaigpu.Size = new System.Drawing.Size(188, 20);
             this.txtLoaigpu.TabIndex = 29;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 87);
+            this.label3.Location = new System.Drawing.Point(34, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 16);
+            this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 28;
             this.label3.Text = "Loại GPU";
             // 
             // Form_GPU
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 542);
-            this.Controls.Add(this.btnXuatexcel);
+            this.ClientSize = new System.Drawing.Size(828, 503);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnHienthids);
             this.Controls.Add(this.btnTimkiem);
@@ -315,11 +329,10 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgridGPU);
-            this.Controls.Add(this.txtMagpu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "Form_GPU";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -330,12 +343,10 @@
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnXuatexcel;
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnHienthids;
         private System.Windows.Forms.Button btnTimkiem;

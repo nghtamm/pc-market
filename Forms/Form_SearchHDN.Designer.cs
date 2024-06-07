@@ -44,12 +44,14 @@ namespace pc_market.Forms {
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(770, 60);
@@ -79,6 +81,7 @@ namespace pc_market.Forms {
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(50, 20);
             this.textBox2.TabIndex = 8;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Total_KeyPress);
             // 
             // label3
             // 
@@ -95,6 +98,7 @@ namespace pc_market.Forms {
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(87, 20);
             this.textBox3.TabIndex = 10;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Total_KeyPress);
             // 
             // label4
             // 
@@ -129,13 +133,13 @@ namespace pc_market.Forms {
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 21);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Mã khách hàng:";
+            this.label6.Text = "Mã NCC:";
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(529, 148);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(220, 20);
+            this.textBox4.Size = new System.Drawing.Size(177, 20);
             this.textBox4.TabIndex = 16;
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Total_KeyPress);
             // 
@@ -167,6 +171,8 @@ namespace pc_market.Forms {
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::pc_market.Properties.Resources.search;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(44, 493);
             this.button1.Name = "button1";
@@ -178,6 +184,8 @@ namespace pc_market.Forms {
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::pc_market.Properties.Resources.skip;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(296, 493);
             this.button2.Name = "button2";
@@ -189,6 +197,8 @@ namespace pc_market.Forms {
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::pc_market.Properties.Resources.close;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(549, 493);
             this.button3.Name = "button3";
@@ -208,11 +218,22 @@ namespace pc_market.Forms {
             this.label8.TabIndex = 39;
             this.label8.Text = "Kích đúp vào một hóa đơn để hiển thị thông tin chi tiết!";
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(712, 148);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(37, 18);
+            this.label9.TabIndex = 40;
+            this.label9.Text = "VNĐ";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form_SearchHDN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 571);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -241,6 +262,8 @@ namespace pc_market.Forms {
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label9;
 
         private System.Windows.Forms.Label label8;
 

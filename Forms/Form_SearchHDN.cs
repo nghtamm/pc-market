@@ -12,17 +12,17 @@ namespace pc_market.Forms {
 
         public void Form_SearchHDN_Load(object sender, EventArgs e) {
             // Classes.Functions.Connect();
-            string employeeComboBoxQuery = "SELECT maNV, tenNV FROM nhanVien";
+            string employeeComboBoxQuery = "SELECT maNV, tenNV, maNV + ' - ' + tenNV as display FROM nhanVien";
             DataTable employeeTable = Classes.Functions.GetDataToTable(employeeComboBoxQuery);
             comboBox1.DataSource = employeeTable;
-            comboBox1.DisplayMember = "maNV";
+            comboBox1.DisplayMember = "display";
             comboBox1.ValueMember = "maNV";
             comboBox1.SelectedIndex = -1;
 
-            string providerComboBoxQuery = "SELECT maNCC, tenNCC FROM nhaCungCap";
+            string providerComboBoxQuery = "SELECT maNCC, tenNCC, maNCC + ' - ' + tenNCC as display FROM nhaCungCap";
             DataTable providerTable = Classes.Functions.GetDataToTable(providerComboBoxQuery);
             comboBox2.DataSource = providerTable;
-            comboBox2.DisplayMember = "maNCC";
+            comboBox2.DisplayMember = "display";
             comboBox2.ValueMember = "maNCC";
             comboBox2.SelectedIndex = -1;
         }

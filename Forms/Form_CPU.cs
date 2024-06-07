@@ -38,7 +38,7 @@ namespace pc_market.Forms
         }
         private void Load_DataGridView() {
             string sql;
-            sql = "SELECT CPU.maCPU, CPU.tenCPU, CPU.socket, CPU.tocDO, CPU.moTa, hangSanXuat.tenHSX, CPU.maHSX FROM CPU JOIN hangSanXuat ON CPU.maHSX = hangSanXuat.maHSX";
+            sql = "SELECT CPU.maCPU, CPU.tenCPU, CPU.socket, CPU.tocDO, CPU.maHSX, hangSanXuat.tenHSX, CPU.moTa FROM CPU JOIN hangSanXuat ON CPU.maHSX = hangSanXuat.maHSX";
             mv = Classes.Functions.GetDataToTable(sql);
             dgridCPU.DataSource = mv;
 
@@ -46,14 +46,16 @@ namespace pc_market.Forms
             dgridCPU.Columns[1].HeaderText = "Tên CPU";
             dgridCPU.Columns[2].HeaderText = "Socket";
             dgridCPU.Columns[3].HeaderText = "Tốc độ";
-            dgridCPU.Columns[4].HeaderText = "Hãng sản xuất";
-            dgridCPU.Columns[5].HeaderText = "Mô tả";
+            dgridCPU.Columns[4].HeaderText = "Mã HSX";
+            dgridCPU.Columns[5].HeaderText = "Hãng sản xuất";
+            dgridCPU.Columns[6].HeaderText = "Mô tả";
             dgridCPU.Columns[0].Width = 70;
             dgridCPU.Columns[1].Width = 200;
             dgridCPU.Columns[2].Width = 100;
             dgridCPU.Columns[3].Width = 100;
-            dgridCPU.Columns[4].Width = 100;
-            dgridCPU.Columns[5].Width = 200;
+            dgridCPU.Columns[4].Width = 70;
+            dgridCPU.Columns[5].Width = 100;
+            dgridCPU.Columns[6].Width = 200;
             dgridCPU.AllowUserToAddRows = false;
             dgridCPU.EditMode = DataGridViewEditMode.EditProgrammatically;
             
@@ -99,8 +101,9 @@ namespace pc_market.Forms
 
             txtmaCPU.Text = dgridCPU.CurrentRow.Cells["maCPU"].Value.ToString();
             txttenCPU.Text = dgridCPU.CurrentRow.Cells["tenCPU"].Value.ToString();
-            ma = dgridCPU.CurrentRow.Cells["maHSX"].Value.ToString();
-            cbomaHSX.Text = Classes.Functions.GetFieldValues("SELECT tenHSX FROM hangSanXuat WHERE maHSX = N'" + ma + "'");
+            // ma = dgridCPU.CurrentRow.Cells["maHSX"].Value.ToString();
+            // cbomaHSX.Text = Classes.Functions.GetFieldValues("SELECT tenHSX FROM hangSanXuat WHERE maHSX = N'" + ma + "'");
+            cbomaHSX.Text = dgridCPU.CurrentRow.Cells["tenHSX"].Value.ToString();
             txtsocket.Text = dgridCPU.CurrentRow.Cells["socket"].Value.ToString();
             txttocDo.Text = dgridCPU.CurrentRow.Cells["tocDo"].Value.ToString();
             txtmoTa.Text = dgridCPU.CurrentRow.Cells["moTa"].Value.ToString();
@@ -229,7 +232,7 @@ namespace pc_market.Forms
         
         private void btnHienthids_Click(object sender, EventArgs e) {
             string sql;
-            sql = "SELECT * FROM CPU";
+            sql = "SELECT CPU.maCPU, CPU.tenCPU, CPU.socket, CPU.tocDO, CPU.maHSX, hangSanXuat.tenHSX, CPU.moTa FROM CPU JOIN hangSanXuat ON CPU.maHSX = hangSanXuat.maHSX";
             mv = Classes.Functions.GetDataToTable(sql);
             dgridCPU.DataSource = mv;
         }
@@ -240,11 +243,11 @@ namespace pc_market.Forms
                 return;
             }
 
-            sql = "SELECT * FROM CPU WHERE 1=1";
+            sql = "SELECT CPU.maCPU, CPU.tenCPU, CPU.socket, CPU.tocDO, CPU.maHSX, hangSanXuat.tenHSX, CPU.moTa FROM CPU JOIN hangSanXuat ON CPU.maHSX = hangSanXuat.maHSX WHERE 1=1";
             if (txttenCPU.Text != "")
-                sql = sql + " AND tenCPU Like N'%" + txttenCPU.Text + "%'";
+                sql = sql + " AND CPU.tenCPU Like N'%" + txttenCPU.Text + "%'";
             if (cbomaHSX.Text != "")
-                sql = sql + " AND maHSX Like N'%" + cbomaHSX.SelectedValue + "%'";
+                sql = sql + " AND CPU.maHSX Like N'%" + cbomaHSX.SelectedValue + "%'";
 
             mv = Classes.Functions.GetDataToTable(sql);
             if (mv.Rows.Count == 0)
@@ -256,6 +259,12 @@ namespace pc_market.Forms
         }
         private void btnDong_Click(object sender, EventArgs e) {
             this.Close();
+        }
+        private void Validate_KeyPress(object sender, KeyPressEventArgs e) {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == '.' || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

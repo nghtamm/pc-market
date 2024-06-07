@@ -153,7 +153,7 @@ namespace pc_market.Forms
             string sql;
             double sl, SLcon, tong, Tongmoi;
             sql = "SELECT maHDB FROM hoaDonBan WHERE maHDB=N'" + txtMaHDBan.Text + "'";
-            if (!Functions.CheckKey(sql))
+            if (!Functions.CheckID(sql))
             {
                 // Mã hóa đơn chưa có, tiến hành lưu các thông tin chung
                 // Mã HDBan được sinh tự động do đó không có trường hợp trùng khóa
@@ -203,7 +203,7 @@ namespace pc_market.Forms
                 return;
             }*/
             sql = "SELECT maHDB FROM hoaDonBan WHERE maHDB=N'" + cboMamayvt.SelectedValue + "' AND maHDB = N'" + txtMaHDBan.Text.Trim() + "'";
-            if (Functions.CheckKey(sql))
+            if (Functions.CheckID(sql))
             {
                 MessageBox.Show("Mã hàng này đã có, bạn phải nhập mã khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 ResetValuesHang();
@@ -398,6 +398,7 @@ namespace pc_market.Forms
                 ResetValues();
                 Load_DataGridViewChitiet();
                 btnXoa.Enabled = false;
+                btnLuu.Enabled = false;
                 btnInhoadon.Enabled = false;
             }
 
@@ -563,8 +564,6 @@ namespace pc_market.Forms
         {
             e.Handled = true;
         }
-
-
 
         private void cboMakhach_KeyPress(object sender, KeyPressEventArgs e)
         {

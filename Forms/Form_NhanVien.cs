@@ -67,7 +67,7 @@ namespace pc_market.Forms
                 return;
             }
             
-            sql = "INSERT INTO nhanVien(maNV,tenNV,ngaySinh,gioiTinh,diaChi,dienThoai)VALUES(N'" + txtmaNV.Text + "',N'" + txttenNV.Text + "',N'" + txtngaySinh.Text + "',N'" + txtgioiTinh.SelectedItem.ToString() + "',N'" + txtdiaChi.Text + "'," + txtdienThoai.Text + ") ";
+            sql = "INSERT INTO nhanVien(maNV,tenNV,ngaySinh,gioiTinh,diaChi,dienThoai)VALUES(N'" + txtmaNV.Text + "',N'" + txttenNV.Text + "',N'" + DateTime.ParseExact(txtngaySinh.Text, "dd/MM/yyyy", null).ToString("yyyy-MM-dd") + "',N'" + txtgioiTinh.SelectedItem.ToString() + "',N'" + txtdiaChi.Text + "',N'" + txtdienThoai.Text + "') ";
             Classes.Functions.RunSQL(sql);
             DataGridView_Load();
             ResetValues();
@@ -200,7 +200,7 @@ namespace pc_market.Forms
                 txtmaNV.Focus();
                 return;
             }
-            sql = "UPDATE nhanVien SET tenNV=N'" + txttenNV.Text + "', diaChi=N'" + txtdiaChi.Text + "',gioiTinh=N'" + txtgioiTinh.SelectedItem.ToString() +  "',ngaySinh='" + txtngaySinh.Text +  "',dienThoai='" + txtdienThoai.Text + "' WHERE maNV=N'" + txtmaNV.Text + "'";
+            sql = "UPDATE nhanVien SET tenNV=N'" + txttenNV.Text + "', diaChi=N'" + txtdiaChi.Text + "',gioiTinh=N'" + txtgioiTinh.SelectedItem.ToString() +  "',ngaySinh='" + DateTime.ParseExact(txtngaySinh.Text, "dd/MM/yyyy", null).ToString("yyyy-MM-dd") +  "',dienThoai=N'" + txtdienThoai.Text + "' WHERE maNV=N'" + txtmaNV.Text + "'";
             Classes.Functions.RunSQL(sql);
             DataGridView_Load();
             ResetValues();
@@ -223,7 +223,8 @@ namespace pc_market.Forms
             }    
             txtmaNV.Text = dataGridView.CurrentRow.Cells["maNV"].Value.ToString();
             txttenNV.Text = dataGridView.CurrentRow.Cells["tenNV"].Value.ToString();
-            txtngaySinh.Text = dataGridView.CurrentRow.Cells["ngaySinh"].Value.ToString();
+            txtngaySinh.Text = ((DateTime)dataGridView.CurrentRow.Cells["ngaySinh"].Value).ToString("dd/MM/yyyy");
+            // txtngaySinh.Text = dataGridView.CurrentRow.Cells["ngaySinh"].Value.ToString();
             txtgioiTinh.SelectedItem = dataGridView.CurrentRow.Cells["gioiTinh"].Value.ToString();
             txtdiaChi.Text = dataGridView.CurrentRow.Cells["diaChi"].Value.ToString();
             txtdienThoai.Text = dataGridView.CurrentRow.Cells["dienThoai"].Value.ToString();
@@ -259,6 +260,20 @@ namespace pc_market.Forms
             sql = "SELECT * FROM nhanVien";
             thau = Classes.Functions.GetDataToTable(sql);
             dataGridView.DataSource = thau;
+        }
+
+        private void Validate_KeyPress(object sender, KeyPressEventArgs e) {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == '/' || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
+
+        private void Validate_KeyPress2(object sender, KeyPressEventArgs e) {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

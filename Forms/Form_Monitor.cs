@@ -44,7 +44,7 @@ namespace pc_market.Forms
             dataGridView.Columns[0].HeaderText = "Mã màn hình";
             dataGridView.Columns[1].HeaderText = "Thông tin";
             dataGridView.Columns[0].Width = 100;
-            dataGridView.Columns[1].Width = 300;
+            dataGridView.Columns[1].Width = 600;
             dataGridView.AllowUserToAddRows = false;
             dataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
         }

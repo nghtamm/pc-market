@@ -79,6 +79,7 @@ namespace pc_market.Forms {
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(1150, 60);
@@ -430,6 +431,8 @@ namespace pc_market.Forms {
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::pc_market.Properties.Resources.add;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(410, 719);
             this.button1.Name = "button1";
@@ -441,6 +444,8 @@ namespace pc_market.Forms {
             // 
             // button2
             // 
+            this.button2.BackgroundImage = global::pc_market.Properties.Resources.save;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(555, 719);
             this.button2.Name = "button2";
@@ -452,6 +457,8 @@ namespace pc_market.Forms {
             // 
             // button3
             // 
+            this.button3.BackgroundImage = global::pc_market.Properties.Resources.delete;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(700, 719);
             this.button3.Name = "button3";
@@ -463,6 +470,8 @@ namespace pc_market.Forms {
             // 
             // button4
             // 
+            this.button4.BackgroundImage = global::pc_market.Properties.Resources.display;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(845, 719);
             this.button4.Name = "button4";
@@ -513,6 +522,8 @@ namespace pc_market.Forms {
             // 
             // button6
             // 
+            this.button6.BackgroundImage = global::pc_market.Properties.Resources.skip;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.Location = new System.Drawing.Point(990, 719);
             this.button6.Name = "button6";

@@ -15,6 +15,7 @@ namespace pc_market.Classes {
             // connString for Windows Authentication (using Local SQL Server & SQL Server Management Studio)
             // connString = "Server=localhost;Database=pc-market;Trusted_Connection=True;";
 
+            // connString for Docker SQL Server (change username & password if needed)
             connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
             conn = new SqlConnection(connString);
             try {
@@ -99,16 +100,6 @@ namespace pc_market.Classes {
             reader.Close();
             return key;
         }
-        public static bool CheckKey(string sql)
-        {
-            SqlDataAdapter Mydata = new SqlDataAdapter(sql, Functions.conn);
-            DataTable table = new DataTable();
-            Mydata.Fill(table);
-            if (table.Rows.Count > 0)
-                return true;
-            else
-                return false;
-        }
 
         // Đổ dữ liệu vào ComboBox
         public static void FillCombo(string query, System.Windows.Forms.ComboBox comboBox, string value, string name) {
@@ -120,7 +111,7 @@ namespace pc_market.Classes {
             comboBox.ValueMember = value; // Trường giá trị
             comboBox.DisplayMember = name; // Trường hiển thị
         }
-      
+
         // Đổ dữ liệu vào combo box với định dạng mã + tên
         /*public static void FillCombo1(string query, ComboBox comboBox, string value, string displayExpression)
         {
@@ -144,9 +135,9 @@ namespace pc_market.Classes {
         }*/
         // Hàm này tương tự như hàm FillCombo nhưng có thêm khả năng định dạng văn bản hiển thị trong combobox.
 
-        public static bool IsDate(string d)
-        {
-            string[] parts = d.Split('/');
+        // Hàm kiểm tra dữ liệu nhập vào có phải là date không
+        public static bool IsDate(string date) {
+            string[] parts = date.Split('/');
             if ((Convert.ToInt32(parts[0]) >= 1) && (Convert.ToInt32(parts[0]) <= 31) && (Convert.ToInt32(parts[1]) >= 1) && (Convert.ToInt32(parts[1]) <= 12) && (Convert.ToInt32(parts[2]) >= 1900))
                 return true;
             else
@@ -251,6 +242,7 @@ namespace pc_market.Classes {
             return result;
         }
 
+        // Tạo ID dựa theo ngày và giờ cho params bất kì
         public static string CreateKey(string param) {
             string key = param;
 
@@ -275,6 +267,7 @@ namespace pc_market.Classes {
             return key;
         }
 
+        // Chuyển đổi thời gian từ 12h sang 24h
         public static string ConvertTimeTo24(string hour) {
             string hour24 = "";
             switch (hour) {

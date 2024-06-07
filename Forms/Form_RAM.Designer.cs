@@ -51,6 +51,7 @@
             this.btnxoa = new System.Windows.Forms.Button();
             this.btnsua = new System.Windows.Forms.Button();
             this.btnthem = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,11 +74,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkOrchid;
-            this.label1.Location = new System.Drawing.Point(441, 24);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(463, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 50);
+            this.label1.Size = new System.Drawing.Size(90, 37);
             this.label1.TabIndex = 8;
             this.label1.Text = "RAM";
             // 
@@ -161,7 +162,7 @@
             // 
             this.txtDungluong.Location = new System.Drawing.Point(453, 161);
             this.txtDungluong.Name = "txtDungluong";
-            this.txtDungluong.Size = new System.Drawing.Size(180, 20);
+            this.txtDungluong.Size = new System.Drawing.Size(152, 20);
             this.txtDungluong.TabIndex = 23;
             // 
             // label8
@@ -284,12 +285,22 @@
             this.btnthem.UseVisualStyleBackColor = true;
             this.btnthem.Click += new System.EventHandler(this.btnthem_Click_1);
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(611, 164);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(22, 13);
+            this.label9.TabIndex = 27;
+            this.label9.Text = "GB";
+            // 
             // Form_RAM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1016, 519);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.cboMaHsx);
             this.Controls.Add(this.btnhienthids);
             this.Controls.Add(this.btntimkiem);
@@ -324,6 +335,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label9;
 
         #endregion
 

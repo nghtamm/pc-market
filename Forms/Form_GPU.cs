@@ -56,6 +56,7 @@ namespace pc_market.Forms {
             dgridGPU.Columns[1].Width = 200;
             dgridGPU.Columns[2].Width = 70;
             dgridGPU.Columns[4].Width = 70;
+            dgridGPU.Columns[6].Width = 200;
             dgridGPU.AllowUserToAddRows = false;
             dgridGPU.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
@@ -140,7 +141,7 @@ namespace pc_market.Forms {
             }
 
             if (txtLoaigpu.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải loại gpu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn phải loại GPU", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLoaigpu.Focus();
                 return;
             }
@@ -188,7 +189,7 @@ namespace pc_market.Forms {
             }
 
             if (txtLoaigpu.Text.Trim().Length == 0) {
-                MessageBox.Show("Bạn phải loại gpu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn phải loại GPU", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtLoaigpu.Focus();
                 return;
             }
@@ -229,11 +230,11 @@ namespace pc_market.Forms {
                 return;
             }
 
-            sql = "SELECT * FROM GPU WHERE 1=1";
+            sql = "SELECT maGPU, tenGPU, loaiGPU, dungLuong,a.maHSX,b.tenHSX,moTa FROM GPU as a INNER JOIN hangSanXuat as b ON a.maHSX = b.maHSX WHERE 1=1";
             if (txtTengpu.Text != "")
-                sql = sql + " AND tenGPU Like N'%" + txtTengpu.Text + "%'";
+                sql = sql + " AND a.tenGPU Like N'%" + txtTengpu.Text + "%'";
             if (cboMahsx.Text != "")
-                sql = sql + " AND maHSX Like N'%" + cboMahsx.SelectedValue + "%'";
+                sql = sql + " AND a.maHSX Like N'%" + cboMahsx.SelectedValue + "%'";
 
             tblGPU = Classes.Functions.GetDataToTable(sql);
             if (tblGPU.Rows.Count == 0)
@@ -246,9 +247,24 @@ namespace pc_market.Forms {
 
         private void btnHienthids_Click(object sender, EventArgs e) {
             string sql;
-            sql = "SELECT * FROM GPU";
+            sql = "SELECT maGPU, tenGPU, loaiGPU, dungLuong,a.maHSX,b.tenHSX,moTa FROM GPU as a INNER JOIN hangSanXuat as b ON a.maHSX = b.maHSX";
             tblGPU = Classes.Functions.GetDataToTable(sql);
             dgridGPU.DataSource = tblGPU;
+            dgridGPU.Columns[4].Visible = false; // Ẩn cột maHSX
+
+            dgridGPU.Columns[0].HeaderText = "Mã GPU";
+            dgridGPU.Columns[1].HeaderText = "Tên GPU";
+            dgridGPU.Columns[2].HeaderText = "Loại";
+            dgridGPU.Columns[3].HeaderText = "Dung lượng";
+            dgridGPU.Columns[5].HeaderText = "Tên HSX";
+            dgridGPU.Columns[6].HeaderText = "Mô tả";
+            dgridGPU.Columns[0].Width = 70;
+            dgridGPU.Columns[1].Width = 200;
+            dgridGPU.Columns[2].Width = 70;
+            dgridGPU.Columns[4].Width = 70;
+            dgridGPU.Columns[6].Width = 200;
+            dgridGPU.AllowUserToAddRows = false;
+            dgridGPU.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
 
         /*private void ExportExcel(string path) {

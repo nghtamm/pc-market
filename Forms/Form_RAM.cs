@@ -170,7 +170,7 @@ namespace pc_market.Forms {
                 return;
             }
 
-            if (cboMaHsx.SelectedValue == null) {
+            if (cboMaHsx.SelectedItem == null) {
                 MessageBox.Show("Bạn phải chọn hãng sản xuất", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 cboMaHsx.Focus();
                 return;

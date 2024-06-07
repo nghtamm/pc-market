@@ -66,7 +66,7 @@ namespace pc_market.Forms
 
         private void btnxem_Click(object sender, EventArgs e)
         {
-            string connectionString = "Data Source=ADMIN\\VOCNGUYEN;Initial Catalog=pc-market;Integrated Security=True;Encrypt=False";
+            // string connectionString = "Data Source=ADMIN\\VOCNGUYEN;Initial Catalog=pc-market;Integrated Security=True;Encrypt=False";
             string sql = ""; 
          
                 if (rdbNgay.Checked)
@@ -78,7 +78,7 @@ namespace pc_market.Forms
                       $"FROM hoadonban hdb " +
                       $"JOIN chitiethdb ct ON hdb.maHDB = ct.maHDB " +
                       $"JOIN maytinh mt ON ct.maMay = mt.maMay " +
-                      $"WHERE hdb.ngayBan = '{selectedDate.ToString("dd-MM-yyyy")}' " +
+                      $"WHERE hdb.ngayBan = '{selectedDate.ToString("MM-dd-yyyy")}' " +
                       $"GROUP BY mt.maMay, mt.tenMay, hdb.ngayBan " +
                       $"ORDER BY hdb.ngayBan, mt.maMay";
 
@@ -100,7 +100,7 @@ namespace pc_market.Forms
                         sql = $"SELECT mt.maMay,mt.tenMay,SUM(ct.soLuong) AS soluongbanra,SUM(ct.thanhTien) AS doanhthu  FROM  hoadonban hdb  " +
                         $"JOIN    chitiethdb ct ON hdb.maHDB = ct.maHDB " +
                         $"JOIN    maytinh mt ON ct.maMay = mt.maMay   " +
-                        $"WHERE    hdb.ngayBan BETWEEN '{fromDate.ToString("dd-MM-yyyy")}' AND '{toDate.ToString("dd-MM-yyyy")}'   " +
+                        $"WHERE    hdb.ngayBan BETWEEN '{fromDate.ToString("MM-dd-yyyy")}' AND '{toDate.ToString("MM-dd-yyyy")}'   " +
                         $"GROUP BY    mt.maMay, mt.tenMay  ORDER BY  mt.maMay";
                     }
                     else
@@ -116,13 +116,21 @@ namespace pc_market.Forms
                 }
 
                 //Đổ dữ liệu vào DataGridView
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(Classes.Functions.connString))
                 {
                     SqlCommand command = new SqlCommand(sql, connection);
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
                     dataGridView.DataSource = table;
+                    dataGridView.Columns[0].HeaderText = "Mã máy tính";
+                    dataGridView.Columns[1].HeaderText = "Tên máy tính";
+                    dataGridView.Columns[2].HeaderText = "Số lượng bán ra";
+                    dataGridView.Columns[3].HeaderText = "Doanh thu";
+                    dataGridView.Columns[0].Width = 180;
+                    dataGridView.Columns[1].Width = 300;
+                    dataGridView.Columns[2].Width = 180;
+                    dataGridView.Columns[3].Width = 200;
 
                 decimal totalRevenue = 0;
                 foreach (DataRow row in table.Rows)
@@ -142,24 +150,30 @@ namespace pc_market.Forms
 
         private void ExportExcel(string path)
         {
-           Excel.Application application = new Excel.Application(); 
-           application.Application.Workbooks.Add(Type.Missing); 
-            for (int i = 0; i < dataGridView.Columns.Count; i++)
+            try
             {
-                application.Cells[1, i + 1] = dataGridView.Columns[i].HeaderText;
-            }
-            for (int i = 0; i < dataGridView.Rows.Count; i++)
-            {
-                for (int j = 0; j < dataGridView.Columns.Count; j++)
+                Excel.Application application = new Excel.Application();
+                application.Application.Workbooks.Add(Type.Missing);
+                for (int i = 0; i < dataGridView.Columns.Count; i++)
                 {
-                    application.Cells[i+2, j+1] = dataGridView.Rows[i].Cells[i].Value;
+                    application.Cells[1, i + 1] = dataGridView.Columns[i].HeaderText;
                 }
-                    
+                for (int i = 0; i < dataGridView.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView.Columns.Count; j++)
+                    {
+                        application.Cells[i+2, j+1] = dataGridView.Rows[i].Cells[j].Value;
+                    }
+                }
+                application.Columns.AutoFit();
+                application.ActiveWorkbook.SaveCopyAs(path);
+                application.ActiveWorkbook.Saved = true;
+                application.Quit();
             }
-            application.Columns.AutoFit();
-            application.ActiveWorkbook.SaveCopyAs(path);
-            application.ActiveWorkbook.Saved = true;
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra trong quá trình xuất file: " + ex.Message);
+            }
         }
 
 
@@ -190,7 +204,12 @@ namespace pc_market.Forms
             this.Close();
         }
 
-       
+        private void Validate_KeyPress(object sender, KeyPressEventArgs e) {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
     }
 
 }

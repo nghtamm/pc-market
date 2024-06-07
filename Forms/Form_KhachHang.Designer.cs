@@ -115,8 +115,8 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkViolet;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label5.Location = new System.Drawing.Point(12, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(988, 90);
@@ -131,6 +131,7 @@
             this.mskDienthoai.Name = "mskDienthoai";
             this.mskDienthoai.Size = new System.Drawing.Size(360, 20);
             this.mskDienthoai.TabIndex = 16;
+            this.mskDienthoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Validate_KeyPress);
             // 
             // btndong
             // 

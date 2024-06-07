@@ -20,24 +20,24 @@ namespace pc_market.Forms {
             button4.Enabled = false;
             button6.Enabled = false;
 
-            string employeeComboBoxQuery = "SELECT maNV, tenNV FROM nhanVien";
+            string employeeComboBoxQuery = "SELECT maNV, tenNV, maNV + ' - ' + tenNV as display FROM nhanVien";
             DataTable employeeTable = Classes.Functions.GetDataToTable(employeeComboBoxQuery);
             comboBox1.DataSource = employeeTable;
-            comboBox1.DisplayMember = "maNV";
+            comboBox1.DisplayMember = "display";
             comboBox1.ValueMember = "maNV";
             comboBox1.SelectedIndex = -1;
 
-            string providerComboBoxQuery = "SELECT maNCC, tenNCC FROM nhaCungCap";
+            string providerComboBoxQuery = "SELECT maNCC, tenNCC, maNCC + ' - ' + tenNCC as display FROM nhaCungCap";
             DataTable providerTable = Classes.Functions.GetDataToTable(providerComboBoxQuery);
             comboBox2.DataSource = providerTable;
-            comboBox2.DisplayMember = "maNCC";
+            comboBox2.DisplayMember = "display";
             comboBox2.ValueMember = "maNCC";
             comboBox2.SelectedIndex = -1;
 
-            string pcComboBoxQuery = "SELECT maMay, tenMay FROM mayTinh";
+            string pcComboBoxQuery = "SELECT maMay, tenMay, maMay + ' - ' + tenMay as display FROM mayTinh";
             DataTable pcTable = Classes.Functions.GetDataToTable(pcComboBoxQuery);
             comboBox3.DataSource = pcTable;
-            comboBox3.DisplayMember = "maMay";
+            comboBox3.DisplayMember = "display";
             comboBox3.ValueMember = "maMay";
             comboBox3.SelectedIndex = -1;
 
@@ -319,6 +319,8 @@ namespace pc_market.Forms {
 
                 ResetValues();
                 DataGridView_Load();
+                button1.Enabled = true;
+                button2.Enabled = false;
                 button3.Enabled = false;
                 button4.Enabled = false;
                 button6.Enabled = false;

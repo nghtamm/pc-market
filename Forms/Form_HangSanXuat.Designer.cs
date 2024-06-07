@@ -29,8 +29,7 @@ namespace pc_market.Forms
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.btnHienthids = new System.Windows.Forms.Button();
             this.btnTimkiem = new System.Windows.Forms.Button();
             this.btnBoqua = new System.Windows.Forms.Button();
@@ -52,7 +51,9 @@ namespace pc_market.Forms
             // 
             // btnHienthids
             // 
-            this.btnHienthids.Location = new System.Drawing.Point(481, 175);
+            this.btnHienthids.BackgroundImage = global::pc_market.Properties.Resources.display;
+            this.btnHienthids.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnHienthids.Location = new System.Drawing.Point(481, 381);
             this.btnHienthids.Margin = new System.Windows.Forms.Padding(2);
             this.btnHienthids.Name = "btnHienthids";
             this.btnHienthids.Size = new System.Drawing.Size(75, 37);
@@ -63,7 +64,9 @@ namespace pc_market.Forms
             // 
             // btnTimkiem
             // 
-            this.btnTimkiem.Location = new System.Drawing.Point(409, 175);
+            this.btnTimkiem.BackgroundImage = global::pc_market.Properties.Resources.search;
+            this.btnTimkiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnTimkiem.Location = new System.Drawing.Point(409, 381);
             this.btnTimkiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimkiem.Name = "btnTimkiem";
             this.btnTimkiem.Size = new System.Drawing.Size(68, 37);
@@ -74,7 +77,9 @@ namespace pc_market.Forms
             // 
             // btnBoqua
             // 
-            this.btnBoqua.Location = new System.Drawing.Point(337, 175);
+            this.btnBoqua.BackgroundImage = global::pc_market.Properties.Resources.skip;
+            this.btnBoqua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnBoqua.Location = new System.Drawing.Point(337, 381);
             this.btnBoqua.Margin = new System.Windows.Forms.Padding(2);
             this.btnBoqua.Name = "btnBoqua";
             this.btnBoqua.Size = new System.Drawing.Size(68, 37);
@@ -85,7 +90,9 @@ namespace pc_market.Forms
             // 
             // btnLuu
             // 
-            this.btnLuu.Location = new System.Drawing.Point(265, 174);
+            this.btnLuu.BackgroundImage = global::pc_market.Properties.Resources.save;
+            this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLuu.Location = new System.Drawing.Point(265, 381);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(68, 37);
@@ -96,7 +103,9 @@ namespace pc_market.Forms
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(193, 174);
+            this.btnSua.BackgroundImage = global::pc_market.Properties.Resources.edit;
+            this.btnSua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnSua.Location = new System.Drawing.Point(193, 381);
             this.btnSua.Margin = new System.Windows.Forms.Padding(2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(68, 37);
@@ -107,7 +116,9 @@ namespace pc_market.Forms
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(121, 174);
+            this.btnXoa.BackgroundImage = global::pc_market.Properties.Resources.delete;
+            this.btnXoa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnXoa.Location = new System.Drawing.Point(121, 381);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(68, 37);
@@ -118,7 +129,9 @@ namespace pc_market.Forms
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(49, 174);
+            this.btnThem.BackgroundImage = global::pc_market.Properties.Resources.add;
+            this.btnThem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnThem.Location = new System.Drawing.Point(49, 381);
             this.btnThem.Margin = new System.Windows.Forms.Padding(2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(68, 37);
@@ -130,7 +143,7 @@ namespace pc_market.Forms
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(49, 226);
+            this.dataGridView.Location = new System.Drawing.Point(49, 175);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
@@ -141,7 +154,7 @@ namespace pc_market.Forms
             // 
             // txttenHSX
             // 
-            this.txttenHSX.Location = new System.Drawing.Point(151, 111);
+            this.txttenHSX.Location = new System.Drawing.Point(102, 67);
             this.txttenHSX.Margin = new System.Windows.Forms.Padding(2);
             this.txttenHSX.Name = "txttenHSX";
             this.txttenHSX.Size = new System.Drawing.Size(207, 20);
@@ -169,7 +182,9 @@ namespace pc_market.Forms
             // 
             // btnDong
             // 
-            this.btnDong.Location = new System.Drawing.Point(679, 174);
+            this.btnDong.BackgroundImage = global::pc_market.Properties.Resources.close;
+            this.btnDong.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnDong.Location = new System.Drawing.Point(679, 381);
             this.btnDong.Margin = new System.Windows.Forms.Padding(2);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(68, 37);
@@ -180,7 +195,7 @@ namespace pc_market.Forms
             // 
             // txtmaHSX
             // 
-            this.txtmaHSX.Location = new System.Drawing.Point(151, 74);
+            this.txtmaHSX.Location = new System.Drawing.Point(102, 29);
             this.txtmaHSX.Margin = new System.Windows.Forms.Padding(2);
             this.txtmaHSX.Name = "txtmaHSX";
             this.txtmaHSX.Size = new System.Drawing.Size(207, 20);
@@ -189,20 +204,22 @@ namespace pc_market.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
-            this.label1.Location = new System.Drawing.Point(330, 21);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(251, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 22);
+            this.label1.Size = new System.Drawing.Size(295, 37);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Hãng Sản Xuất";
+            this.label1.Text = "HÃNG SẢN XUẤT";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(49, 45);
+            this.groupBox1.Controls.Add(this.txttenHSX);
+            this.groupBox1.Controls.Add(this.txtmaHSX);
+            this.groupBox1.Location = new System.Drawing.Point(49, 60);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -224,16 +241,14 @@ namespace pc_market.Forms
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.txttenHSX);
             this.Controls.Add(this.btnDong);
-            this.Controls.Add(this.txtmaHSX);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form_HangSanXuat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_HangSanXuat";
+            this.Text = "Danh mục: Khác/Hãng sản xuất";
             this.Load += new System.EventHandler(this.frm_HSX_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);

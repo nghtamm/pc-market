@@ -112,7 +112,7 @@ namespace pc_market.Forms {
                 return;
             }
 
-            sql = "INSERT INTO nhaCungCap(maNCC,tenNCC,diaChi,dienThoai)VALUES(N'" + txtMancc.Text + "',N'" + txtTenncc.Text + "',N'" + txtDiachi.Text + "'," + txtDienthoai.Text + ") ";
+            sql = "INSERT INTO nhaCungCap(maNCC,tenNCC,diaChi,dienThoai)VALUES(N'" + txtMancc.Text + "',N'" + txtTenncc.Text + "',N'" + txtDiachi.Text + "',N'" + txtDienthoai.Text + "') ";
             Classes.Functions.RunSQL(sql);
             Load_DataGridView();
             ResetValues();
@@ -161,7 +161,7 @@ namespace pc_market.Forms {
                 return;
             }
 
-            sql = "UPDATE nhaCungCap SET tenNCC=N'" + txtTenncc.Text + "', diaChi=N'" + txtDiachi.Text + "',dienThoai='" + txtDienthoai.Text + "' WHERE maNCC=N'" + txtMancc.Text + "'";
+            sql = "UPDATE nhaCungCap SET tenNCC=N'" + txtTenncc.Text + "', diaChi=N'" + txtDiachi.Text + "',dienThoai=N'" + txtDienthoai.Text + "' WHERE maNCC=N'" + txtMancc.Text + "'";
             Classes.Functions.RunSQL(sql);
             Load_DataGridView();
             ResetValues();
@@ -266,6 +266,13 @@ namespace pc_market.Forms {
             sql = "SELECT * FROM nhaCungCap";
             tblNCC = Classes.Functions.GetDataToTable(sql);
             dgridNCC.DataSource = tblNCC;
+        }
+
+        private void Validate_KeyPress(object sender, KeyPressEventArgs e) {
+            if ((e.KeyChar >= '0' && e.KeyChar <= '9') || e.KeyChar == (char)Keys.Back)
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }
