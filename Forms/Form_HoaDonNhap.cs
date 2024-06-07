@@ -51,7 +51,7 @@ namespace pc_market.Forms {
         }
 
         public void DataGridView_Load() {
-            string query = $"SELECT mayTinh.maMay, mayTinh.tenMay, chiTietHDN.soLuong, mayTinh.giaBan, chiTietHDN.thanhTien FROM mayTinh JOIN chiTietHDN ON mayTinh.maMay = chiTietHDN.maMay WHERE chiTietHDN.maHDN = '{textBox1.Text}'";
+            string query = $"SELECT mayTinh.maMay, mayTinh.tenMay, chiTietHDN.soLuong, mayTinh.giaNhap, chiTietHDN.thanhTien FROM mayTinh JOIN chiTietHDN ON mayTinh.maMay = chiTietHDN.maMay WHERE chiTietHDN.maHDN = '{textBox1.Text}'";
             table = Classes.Functions.GetDataToTable(query);
             dataGridView1.DataSource = table;
             dataGridView1.Columns[0].HeaderText = "Mã máy tính";
@@ -104,7 +104,7 @@ namespace pc_market.Forms {
                 return;
             }
 
-            string query = $"SELECT tenMay, giaBan FROM mayTinh WHERE maMay = '{comboBox3.SelectedValue}'";
+            string query = $"SELECT tenMay, giaNhap FROM mayTinh WHERE maMay = '{comboBox3.SelectedValue}'";
             DataTable table = Classes.Functions.GetDataToTable(query);
             if (table.Rows.Count > 0) {
                 textBox6.Text = table.Rows[0][0].ToString();
@@ -421,7 +421,7 @@ namespace pc_market.Forms {
             excelRange.Range["C9:L9"].MergeCells = true;
             excelRange.Range["C9:L9"].Value = invoiceDetails.Rows[0][5].ToString();
 
-            string pcQuery = $"SELECT mayTinh.tenMay, chiTietHDN.soLuong, mayTinh.giaBan, chiTietHDN.thanhTien FROM mayTinh JOIN chiTietHDN ON mayTinh.maMay = chiTietHDN.maMay WHERE chiTietHDN.maHDN = '{textBox1.Text}'";
+            string pcQuery = $"SELECT mayTinh.tenMay, chiTietHDN.soLuong, mayTinh.giaNhap, chiTietHDN.thanhTien FROM mayTinh JOIN chiTietHDN ON mayTinh.maMay = chiTietHDN.maMay WHERE chiTietHDN.maHDN = '{textBox1.Text}'";
             pcDetails = Classes.Functions.GetDataToTable(pcQuery);
             excelRange.Range["A11:F11"].Font.Bold = true;
             excelRange.Range["A11:F11"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
