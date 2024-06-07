@@ -64,6 +64,26 @@ namespace pc_market {
             formDataStorage.Show();
         }
 
+        public void Category_CPU_Click(object sender, EventArgs e) {
+            Forms.Form_CPU formCPU = new Forms.Form_CPU();
+            formCPU.Show();
+        }
+
+        public void Category_Monitor_Click(object sender, EventArgs e) {
+            Forms.Form_Monitor formMonitor = new Forms.Form_Monitor();
+            formMonitor.Show();
+        }
+
+        public void Category_Employee_Click(object sender, EventArgs e) {
+            Forms.Form_NhanVien formNhanVien = new Forms.Form_NhanVien();
+            formNhanVien.Show();
+        }
+
+        public void Category_HSX_Click(object sender, EventArgs e) {
+            Forms.Form_HangSanXuat formHangSanXuat = new Forms.Form_HangSanXuat();
+            formHangSanXuat.Show();
+        }
+
         public void Receipt_HDB_Click(object sender, EventArgs e) {
             Forms.Form_HoaDonBan formHoaDonBan = new Forms.Form_HoaDonBan();
             formHoaDonBan.Show();
@@ -82,6 +102,16 @@ namespace pc_market {
         private void Search_HDB_Click(object sender, EventArgs e) {
             Forms.Form_SearchHDB formSearchHDB = new Forms.Form_SearchHDB();
             formSearchHDB.Show();
+        }
+
+        private void Report_BCB_Click(object sender, EventArgs e) {
+            Forms.Form_BaoCaoBan formBaoCaoBan = new Forms.Form_BaoCaoBan();
+            formBaoCaoBan.Show();
+        }
+
+        private void Report_BCN_Click(object sender, EventArgs e) {
+            Forms.Form_BaoCaoNhap formBaoCaoNhap = new Forms.Form_BaoCaoNhap();
+            formBaoCaoNhap.Show();
         }
     }
 }

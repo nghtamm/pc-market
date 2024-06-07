@@ -104,6 +104,7 @@ namespace pc_market
             this.PCParts_CPU.Name = "PCParts_CPU";
             this.PCParts_CPU.Size = new System.Drawing.Size(173, 22);
             this.PCParts_CPU.Text = "CPU";
+            this.PCParts_CPU.Click += new System.EventHandler(this.Category_CPU_Click);
             // 
             // PCParts_RAM
             // 
@@ -131,6 +132,7 @@ namespace pc_market
             this.categoryEmployee.Name = "categoryEmployee";
             this.categoryEmployee.Size = new System.Drawing.Size(172, 22);
             this.categoryEmployee.Text = "Nhân viên";
+            this.categoryEmployee.Click += new System.EventHandler(this.Category_Employee_Click);
             // 
             // categoryCustomer
             // 
@@ -158,12 +160,14 @@ namespace pc_market
             this.Others_MonitorDetails.Name = "Others_MonitorDetails";
             this.Others_MonitorDetails.Size = new System.Drawing.Size(166, 22);
             this.Others_MonitorDetails.Text = "Chi tiết màn hình";
+            this.Others_MonitorDetails.Click += new System.EventHandler(this.Category_Monitor_Click);
             // 
             // Others_Manufacturers
             // 
             this.Others_Manufacturers.Name = "Others_Manufacturers";
             this.Others_Manufacturers.Size = new System.Drawing.Size(166, 22);
             this.Others_Manufacturers.Text = "Hãng sản xuất";
+            this.Others_Manufacturers.Click += new System.EventHandler(this.Category_HSX_Click);
             // 
             // receiptMenuItem
             // 
@@ -198,12 +202,14 @@ namespace pc_market
             this.reportBuy.Name = "reportBuy";
             this.reportBuy.Size = new System.Drawing.Size(176, 22);
             this.reportBuy.Text = "Báo cáo nhập hàng";
+            this.reportBuy.Click += new System.EventHandler(this.Report_BCN_Click);
             // 
             // reportSell
             // 
             this.reportSell.Name = "reportSell";
             this.reportSell.Size = new System.Drawing.Size(176, 22);
             this.reportSell.Text = "Báo cáo bán hàng";
+            this.reportSell.Click += new System.EventHandler(this.Report_BCB_Click);
             // 
             // reportIncome
             // 
@@ -221,14 +227,14 @@ namespace pc_market
             // searchBuyReceipt
             // 
             this.searchBuyReceipt.Name = "searchBuyReceipt";
-            this.searchBuyReceipt.Size = new System.Drawing.Size(152, 22);
+            this.searchBuyReceipt.Size = new System.Drawing.Size(150, 22);
             this.searchBuyReceipt.Text = "Hóa đơn nhập";
             this.searchBuyReceipt.Click += new System.EventHandler(this.Search_HDN_Click);
             // 
             // searchSellReceipt
             // 
             this.searchSellReceipt.Name = "searchSellReceipt";
-            this.searchSellReceipt.Size = new System.Drawing.Size(152, 22);
+            this.searchSellReceipt.Size = new System.Drawing.Size(150, 22);
             this.searchSellReceipt.Text = "Hóa đơn bán";
             this.searchSellReceipt.Click += new System.EventHandler(this.Search_HDB_Click);
             // 
