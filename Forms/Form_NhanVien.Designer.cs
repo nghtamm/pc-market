@@ -29,7 +29,8 @@ namespace pc_market.Forms
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent()
+        {
             this.txtdienThoai = new System.Windows.Forms.TextBox();
             this.btnDong = new System.Windows.Forms.Button();
             this.btnBoqua = new System.Windows.Forms.Button();
@@ -49,10 +50,10 @@ namespace pc_market.Forms
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtgioiTinh = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.txtngaySinh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnTimkiem = new System.Windows.Forms.Button();
+            this.txtngaySinh = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -234,10 +235,10 @@ namespace pc_market.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtngaySinh);
             this.groupBox1.Controls.Add(this.txtgioiTinh);
             this.groupBox1.Controls.Add(this.label36);
             this.groupBox1.Controls.Add(this.txtdienThoai);
-            this.groupBox1.Controls.Add(this.txtngaySinh);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label2);
@@ -273,15 +274,6 @@ namespace pc_market.Forms
             this.label36.Size = new System.Drawing.Size(54, 13);
             this.label36.TabIndex = 25;
             this.label36.Text = "Ngày sinh";
-            // 
-            // txtngaySinh
-            // 
-            this.txtngaySinh.Location = new System.Drawing.Point(102, 107);
-            this.txtngaySinh.Margin = new System.Windows.Forms.Padding(2);
-            this.txtngaySinh.Name = "txtngaySinh";
-            this.txtngaySinh.Size = new System.Drawing.Size(207, 20);
-            this.txtngaySinh.TabIndex = 26;
-            this.txtngaySinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Validate_KeyPress);
             // 
             // label6
             // 
@@ -319,6 +311,15 @@ namespace pc_market.Forms
             this.btnTimkiem.UseVisualStyleBackColor = true;
             this.btnTimkiem.Click += new System.EventHandler(this.btnTimkiem_Click);
             // 
+            // txtngaySinh
+            // 
+            this.txtngaySinh.Location = new System.Drawing.Point(101, 107);
+            this.txtngaySinh.Mask = "00/00/0000";
+            this.txtngaySinh.Name = "txtngaySinh";
+            this.txtngaySinh.Size = new System.Drawing.Size(208, 20);
+            this.txtngaySinh.TabIndex = 36;
+            this.txtngaySinh.ValidatingType = typeof(System.DateTime);
+            // 
             // Form_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,6 +349,8 @@ namespace pc_market.Forms
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.MaskedTextBox txtngaySinh;
+
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnTimkiem;
 
@@ -355,7 +358,6 @@ namespace pc_market.Forms
 
 
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox txtngaySinh;
 
         private System.Windows.Forms.Label label6;
 

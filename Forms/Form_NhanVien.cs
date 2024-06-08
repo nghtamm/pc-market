@@ -67,6 +67,12 @@ namespace pc_market.Forms
                 return;
             }
             
+            DateTime parsedDate;
+            if (!DateTime.TryParseExact(txtngaySinh.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out parsedDate)) {
+                MessageBox.Show("Ngày sinh không đúng định dạng dd/MM/yyyy hoặc ngày/tháng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtngaySinh.Focus();
+                return;
+            }
             sql = "INSERT INTO nhanVien(maNV,tenNV,ngaySinh,gioiTinh,diaChi,dienThoai)VALUES(N'" + txtmaNV.Text + "',N'" + txttenNV.Text + "',N'" + DateTime.ParseExact(txtngaySinh.Text, "dd/MM/yyyy", null).ToString("yyyy-MM-dd") + "',N'" + txtgioiTinh.SelectedItem.ToString() + "',N'" + txtdiaChi.Text + "',N'" + txtdienThoai.Text + "') ";
             Classes.Functions.RunSQL(sql);
             DataGridView_Load();
@@ -200,6 +206,13 @@ namespace pc_market.Forms
                 txtmaNV.Focus();
                 return;
             }
+            DateTime parsedDate;
+            if (!DateTime.TryParseExact(txtngaySinh.Text, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out parsedDate)) {
+                MessageBox.Show("Ngày sinh không đúng định dạng dd/MM/yyyy hoặc ngày/tháng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtngaySinh.Focus();
+                return;
+            }
+
             sql = "UPDATE nhanVien SET tenNV=N'" + txttenNV.Text + "', diaChi=N'" + txtdiaChi.Text + "',gioiTinh=N'" + txtgioiTinh.SelectedItem.ToString() +  "',ngaySinh='" + DateTime.ParseExact(txtngaySinh.Text, "dd/MM/yyyy", null).ToString("yyyy-MM-dd") +  "',dienThoai=N'" + txtdienThoai.Text + "' WHERE maNV=N'" + txtmaNV.Text + "'";
             Classes.Functions.RunSQL(sql);
             DataGridView_Load();

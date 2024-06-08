@@ -16,7 +16,7 @@ namespace pc_market.Classes {
             // connString = "Server=localhost;Database=pc-market;Trusted_Connection=True;";
 
             // connString for Docker SQL Server (change username & password if needed)
-            connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=@itscelex1623;";
+            connString = "Server=127.0.0.1; Database=pc-market; User Id=sa;Password=Phuocpro1!;";
             conn = new SqlConnection(connString);
             try {
                 conn.Open();
