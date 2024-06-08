@@ -316,7 +316,7 @@ namespace pc_market.Forms
                 dg = 0;
             else
                 dg = Convert.ToDouble(txtDongia.Text);
-            tt = sl * dg - sl * dg / 100;
+            tt = sl * dg;
             txtThanhtien.Text = tt.ToString();
 
         }
