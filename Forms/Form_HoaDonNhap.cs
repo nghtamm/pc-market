@@ -120,9 +120,9 @@ namespace pc_market.Forms {
             string invoiceDate = $"SELECT ngayNhap FROM hoaDonNhap WHERE maHDN = '{textBox1.Text}'";
             maskedTextBox1.Text = Classes.Functions.ConvertDateTime(Classes.Functions.GetFieldValues(invoiceDate));
             string employeeID = $"SELECT maNV FROM hoaDonNhap WHERE maHDN = '{textBox1.Text}'";
-            comboBox1.Text = Classes.Functions.GetFieldValues(employeeID);
+            comboBox1.SelectedValue = Classes.Functions.GetFieldValues(employeeID);
             string providerID = $"SELECT maNCC FROM hoaDonNhap WHERE maHDN = '{textBox1.Text}'";
-            comboBox2.Text = Classes.Functions.GetFieldValues(providerID);
+            comboBox2.SelectedValue = Classes.Functions.GetFieldValues(providerID);
             string total = $"SELECT tongTien FROM hoaDonNhap WHERE maHDN = '{textBox1.Text}'";
             textBox10.Text = Classes.Functions.GetFieldValues(total);
             label17.Text = $"Bằng chữ: {Classes.Functions.ConvertNumericToText(textBox10.Text)}";
@@ -378,7 +378,9 @@ namespace pc_market.Forms {
 
             int excelRow = 0;
             int excelColumn = 0;
+            int totalQuantity = 0;
             DataTable invoiceDetails, pcDetails;
+
             excelBook = excelApp.Workbooks.Add(COMExcel.XlWBATemplate.xlWBATWorksheet);
             excelSheet = (COMExcel.Worksheet)excelBook.Worksheets[1];
             excelRange = (COMExcel.Range)excelSheet.Cells[1, 1];
@@ -421,7 +423,8 @@ namespace pc_market.Forms {
             excelRange.Range["C8:L8"].Value = invoiceDetails.Rows[0][4].ToString();
             excelRange.Range["B9:B9"].Value = "Điện thoại:";
             excelRange.Range["C9:L9"].MergeCells = true;
-            excelRange.Range["C9:L9"].Value = invoiceDetails.Rows[0][5].ToString();
+            excelRange.Range["C9:L9"].NumberFormat = "@";
+            excelRange.Range["C9:L9"].Value = "'" + invoiceDetails.Rows[0][5].ToString();
 
             string pcQuery = $"SELECT mayTinh.tenMay, chiTietHDN.soLuong, mayTinh.giaNhap, chiTietHDN.thanhTien FROM mayTinh JOIN chiTietHDN ON mayTinh.maMay = chiTietHDN.maMay WHERE chiTietHDN.maHDN = '{textBox1.Text}'";
             pcDetails = Classes.Functions.GetDataToTable(pcQuery);
@@ -435,8 +438,12 @@ namespace pc_market.Forms {
             excelRange.Range["E11:E11"].Value = "Thành tiền";
             for (excelRow = 0; excelRow <= pcDetails.Rows.Count - 1; excelRow++) {
                 excelSheet.Cells[excelRow + 12, 1] = excelRow + 1;
-                for (excelColumn = 0; excelColumn <= pcDetails.Columns.Count - 1; excelColumn++)
+                for (excelColumn = 0; excelColumn <= pcDetails.Columns.Count - 1; excelColumn++) {
                     excelSheet.Cells[excelRow + 12, excelColumn + 2] = pcDetails.Rows[excelRow][excelColumn].ToString();
+                    if (excelColumn == 1) {
+                        totalQuantity += int.Parse(pcDetails.Rows[excelRow][excelColumn].ToString());
+                    }
+                }
             }
 
             excelRange = (COMExcel.Range)excelSheet.Cells[excelRow + 14, excelColumn];
@@ -451,11 +458,15 @@ namespace pc_market.Forms {
             excelRange.Range["A1:F1"].Font.Italic = true;
             excelRange.Range["A1:F1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignRight;
             excelRange.Range["A1:F1"].Value = "Bằng chữ: " + Classes.Functions.ConvertNumericToText(invoiceDetails.Rows[0][2].ToString());
+
+            excelRange = (COMExcel.Range)excelSheet.Cells[excelRow + 14, 3];
+            excelRange.Font.Bold = true;
+            excelRange.Value2 = "Tổng số lượng sản phẩm: " + totalQuantity.ToString();
+
             excelRange = (COMExcel.Range)excelSheet.Cells[excelRow + 17, 4];
             excelRange.Range["A1:C1"].MergeCells = true;
             excelRange.Range["A1:C1"].Font.Italic = true;
             excelRange.Range["A1:C1"].HorizontalAlignment = COMExcel.XlHAlign.xlHAlignCenter;
-
             DateTime date = Convert.ToDateTime(invoiceDetails.Rows[0][1]);
             excelRange.Range["A1:C1"].Value = $"Hà Nội, ngày {date.Day} tháng {date.Month} năm {date.Year}";
             excelRange.Range["A2:C2"].MergeCells = true;
