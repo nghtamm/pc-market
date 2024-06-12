@@ -63,4 +63,5 @@ Trước tiên, khởi tạo một compiler với các thiết đặt
 - Windows Application Forms (WinForms App)
 - .NET Framework 4.8.1
 - .NET Core 8.0
+
 Sau đó, ta compile file ***Program.cs*** và sử dụng phần mềm
