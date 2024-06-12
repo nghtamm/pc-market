@@ -43,7 +43,7 @@ Sử dụng [SQL Server Management Studio](https://learn.microsoft.com/en-us/sql
 ```
 pc-market/Database
 ```
-Sau đó, mở file query ***pc-market-script.sql*** và run để khởi tạo database
+Sau đó, mở file query ***pc-market-script.sql*** và chạy để khởi tạo database
 ### Đối với Docker
 - Cài đặt [Docker Desktop](https://docs.docker.com/desktop/install/windows-install/)
 - Mở terminal và tiến hành pull image Microsoft SQL Server
@@ -64,4 +64,4 @@ Trước tiên, khởi tạo một compiler với các thiết đặt
 - .NET Framework 4.8.1
 - .NET Core 8.0
 
-Sau đó, ta compile file ***Program.cs*** và sử dụng phần mềm
+Sau đó, compile file ***Program.cs*** và sử dụng phần mềm
