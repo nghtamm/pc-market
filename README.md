@@ -20,7 +20,7 @@ Phần mềm quản lý cửa hàng máy tính PC Market với các tính năng 
 **Lưu ý**
 - Dữ liệu được lưu trên local, import thông qua file *.sql*
 
-**Tác giả**
+**Nhóm tác giả**
 - [Nguyễn Hoàng Tâm](https://github.com/nghtamm2003)
 - [Nguyễn Huy Phước](https://github.com/DurkYerunz)
 - [Bùi Tú Phương](https://github.com/phuong11032002)
